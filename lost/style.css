@@ -1,0 +1,206 @@
+.spacer-copy {
+  min-height: 16rem;
+}
+
+.title {
+  text-align: center;
+  margin: 40px;
+}
+
+.title h1,
+.title p {
+  margin: 0;
+}
+
+.slider {
+  position: absolute;
+  top: 10%;
+  bottom: 25%;
+  right: 0%;
+  left: 0%;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  perspective: 600px;
+}
+
+.slider * {
+  transition: all 1s cubic-bezier(0.5, -0.75, 0.2, 1.5);
+}
+
+.container {
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg) rotateX(0deg);
+  animation: rotate 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+
+.slide,
+.slide:after,
+.slide:before {
+  display: block;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  transform-style: preserve-3d;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide {
+  background-image: url("https://i.ytimg.com/vi/rryR6l-h_RY/maxresdefault.jpg");
+}
+
+.slide.x {
+  transform: rotateY(90deg);
+}
+
+.slide.x:after {
+  content: "";
+  background-image: url("https://pbs.twimg.com/profile_images/1299647168920170501/YUHvqc9P_400x400.jpg");
+  transform: translateZ(100px) rotateZ(-90deg);
+}
+
+.slide.x:before {
+  content: "";
+  background-image: url("https://static.boredpanda.com/blog/wp-content/uploads/2020/01/tribute-art-to-australian-bushfires-fb14-png__700.jpg");
+  transform: translateZ(-100px) rotateZ(-90deg);
+}
+
+.slide.y {
+  transform: rotateX(90deg);
+}
+
+.slide.y:after {
+  content: "";
+  background-image: url("https://englishtribuneimages.blob.core.windows.net/gallary-content/2020/3/Desk/2020_3$largeimg_1126507830.jpg");
+  transform: translateZ(100px) scale(-1);
+}
+
+.slide.y:before {
+  content: "";
+  background-image: url("https://img.etimg.com/thumb/width-640,height-480,imgsize-48084,resizemode-1,msid-75280772/news/economy/policy/view-erecting-a-firewall-against-china-will-only-hurt-india/india-china-trade.jpg");
+  transform: translateZ(-100px);
+}
+
+.slide.z {
+  transform: rotateX(0);
+}
+
+.slide.z:after {
+  content: "";
+  background-image: url("https://static.independent.co.uk/2020/11/02/20/INDY%20battle%20for%20the%20ballot%20box.jpg");
+  transform: translateZ(100px);
+}
+
+.slide.z:before {
+  content: "";
+  background-image: url("https://pbs.twimg.com/media/EjJHLQbU0AA5tfi.jpg");
+  transform: translateZ(-100px);
+}
+
+@keyframes rotate {
+  0%,
+  10% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+
+  15%,
+  20% {
+    transform: rotateY(180deg) rotateX(0deg);
+  }
+
+  25%,
+  35% {
+    transform: rotateY(180deg) rotateX(270deg);
+  }
+
+  40%,
+  50% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  55%,
+  65% {
+    transform: rotateY(-90deg) rotateX(90deg);
+  }
+
+  70%,
+  80% {
+    transform: rotateY(90deg) rotateX(90deg);
+  }
+
+  90%,
+  95% {
+    transform: rotateY(0deg) rotateX(90deg);
+  }
+}
+
+.shadow {
+  display: block;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 60%;
+  transform: rotateX(90deg);
+  z-index: -1;
+  filter: blur(20px);
+  left: 0;
+  right: 0;
+  margin: auto;
+  animation: rotate-shadow 15s infinite cubic-bezier(1, -0.75, 0.5, 1.2);
+}
+
+@keyframes rotate-shadow {
+  0%,
+  10% {
+    transform: rotateY(0deg) rotateX(90deg);
+  }
+
+  15%,
+  20% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  20.1%,
+  20.9% {
+    transform: rotateY(180deg) rotateX(90deg) translateZ(5px);
+  }
+
+  25%,
+  35% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  35.1%,
+  35.9% {
+    transform: rotateY(180deg) rotateX(90deg) translateZ(-5px);
+  }
+
+  40%,
+  50% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  55%,
+  65% {
+    transform: rotateY(0deg) rotateX(90deg);
+  }
+
+  70%,
+  80% {
+    transform: rotateY(180deg) rotateX(90deg);
+  }
+
+  90%,
+  99% {
+    transform: rotateY(90deg) rotateX(90deg);
+  }
+
+  99.1%,
+  99.9% {
+    transform: rotateY(90deg) rotateX(90deg) translateZ(-5px);
+  }
+}

@@ -1,59 +1,1968 @@
 <!DOCTYPE html>
-<html  >
+<html lang="en">
 <head>
-  <!-- Site made with Mobirise Website Builder v5.2.0, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.2.0, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
-  <title>Home</title>
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  <link rel="stylesheet" href="./style.css">
-  
-  
-  
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio — Builder, Founder, Storyteller</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    /* =============================================
+       CSS VARIABLES & RESET
+    ============================================= */
+    :root {
+      --cream: #F4F1EA;
+      --cream-dark: #EAE6DC;
+      --ink: #161412;
+      --ink-mid: #2D2926;
+      --warm-gray: #7A756E;
+      --warm-gray-light: #B8B2A8;
+      --copper: #B87333;
+      --copper-light: #D4956A;
+      --white: #FDFCF9;
+      --section-pad: clamp(80px, 10vw, 140px);
+      --container: 1200px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* =============================================
+       TYPOGRAPHY SYSTEM
+    ============================================= */
+    .serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+    .serif-italic { font-family: 'Instrument Serif', Georgia, serif; font-style: italic; }
+
+    h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 300; line-height: 1.15; }
+
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--copper);
+    }
+
+    /* =============================================
+       LAYOUT UTILITIES
+    ============================================= */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 5vw, 60px);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    /* =============================================
+       NAV
+    ============================================= */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 22px clamp(20px, 5vw, 60px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(244, 241, 234, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    #hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--ink);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(100px, 12vw, 160px) clamp(30px, 5vw, 80px) clamp(60px, 8vw, 100px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .hero-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 6.5rem);
+      font-weight: 300;
+      line-height: 1.02;
+      color: var(--white);
+      margin-bottom: 28px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--copper-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      font-weight: 300;
+      color: var(--warm-gray-light);
+      max-width: 400px;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .hero-place {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--copper-light);
+      margin-bottom: 48px;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--copper);
+      color: var(--white);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--copper);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--copper);
+    }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: 14px 36px;
+      background: transparent;
+      color: var(--warm-gray-light);
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: border-color 0.3s, color 0.3s;
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--warm-gray-light);
+      color: var(--white);
+    }
+
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-right img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      filter: brightness(0.75) contrast(1.05);
+    }
+
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--ink) 0%, transparent 40%);
+      z-index: 1;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* =============================================
+       DIVIDER
+    ============================================= */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--warm-gray-light), transparent);
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    /* =============================================
+       ORIGIN SECTION
+    ============================================= */
+    #origin {
+      padding: var(--section-pad) 0;
+      background: var(--cream);
+    }
+
+    .origin-header {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .origin-header .eyebrow { margin-bottom: 20px; }
+
+    .origin-title {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      max-width: 700px;
+      margin: 0 auto 32px;
+      color: var(--ink);
+    }
+
+    .origin-intro {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+    }
+
+    .origin-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin: 60px 0;
+    }
+
+    .origin-img-block {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--ink-mid);
+    }
+
+    .origin-img-block img {
+      transition: transform 0.6s ease;
+      filter: saturate(0.7) brightness(0.85);
+    }
+
+    .origin-img-block:hover img { transform: scale(1.04); filter: saturate(1) brightness(0.9); }
+
+    .origin-img-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 28px 16px 16px;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    .origin-text {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-top: 70px;
+      align-items: start;
+    }
+
+    .origin-pull-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 300;
+      line-height: 1.25;
+      color: var(--ink);
+      border-left: 2px solid var(--copper);
+      padding-left: 28px;
+    }
+
+    .origin-pull-quote em { font-style: italic; color: var(--copper); }
+
+    .origin-body p {
+      font-size: 0.98rem;
+      color: var(--warm-gray);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    /* =============================================
+       FAOUD — FEATURED SECTION
+    ============================================= */
+    #faoud {
+      background: var(--ink);
+      color: var(--cream);
+      padding: var(--section-pad) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #faoud::before {
+      content: 'FAOUD';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(120px, 18vw, 220px);
+      font-weight: 300;
+      color: rgba(255,255,255,0.02);
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.1em;
+    }
+
+    .faoud-inner { position: relative; z-index: 2; }
+
+    .faoud-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .faoud-title-block {}
+
+    .faoud-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .faoud-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 7vw, 8rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: var(--white);
+    }
+
+    .faoud-headline em {
+      font-style: italic;
+      color: var(--copper-light);
+    }
+
+    .faoud-tagline-block {
+      max-width: 360px;
+      padding-top: 20px;
+    }
+
+    .faoud-tagline {
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--warm-gray-light);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .faoud-role-pill {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .faoud-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-bottom: 60px;
+    }
+
+    .faoud-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .faoud-img-primary {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--ink-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .faoud-img-secondary {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--ink-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .faoud-img-primary img,
+    .faoud-img-secondary img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+      filter: brightness(0.9);
+    }
+
+    .faoud-img-primary:hover img,
+    .faoud-img-secondary:hover img { transform: scale(1.03); }
+
+    .faoud-content { padding-top: 10px; }
+
+    .faoud-what {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 14px;
+    }
+
+    .faoud-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      line-height: 1.55;
+      color: var(--cream);
+      margin-bottom: 28px;
+    }
+
+    .faoud-body {
+      font-size: 0.93rem;
+      color: var(--warm-gray-light);
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .faoud-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.07);
+      margin-top: 40px;
+    }
+
+    .faoud-stat {
+      background: rgba(255,255,255,0.03);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .faoud-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 300;
+      color: var(--copper-light);
+      line-height: 1;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .faoud-stat-label {
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-gray-light);
+    }
+
+    /* =============================================
+       HILTI / TECH SECTION
+    ============================================= */
+    #hilti {
+      padding: var(--section-pad) 0;
+      background: var(--cream-dark);
+    }
+
+    .hilti-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .hilti-left { position: sticky; top: 120px; }
+
+    .hilti-title {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin: 18px 0 24px;
+    }
+
+    .hilti-intro {
+      font-size: 1rem;
+      color: var(--warm-gray);
+      line-height: 1.8;
+      margin-bottom: 28px;
+    }
+
+    .hilti-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      background: var(--ink-mid);
+      margin-top: 28px;
+    }
+
+    .hilti-img img { transition: transform 0.5s ease; }
+    .hilti-img:hover img { transform: scale(1.03); }
+
+    .hilti-right {}
+
+    .tech-card {
+      background: var(--white);
+      padding: 32px 32px 28px;
+      margin-bottom: 16px;
+      border-left: 2px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .tech-card:hover { border-left-color: var(--copper); }
+
+    .tech-card-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 12px;
+    }
+
+    .tech-card h3 {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .tech-card p {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      line-height: 1.75;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .tech-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border: 1px solid var(--cream-dark);
+      color: var(--warm-gray);
+    }
+
+    /* =============================================
+       IITB BUILDER SECTION
+    ============================================= */
+    #iitb {
+      padding: var(--section-pad) 0;
+      background: var(--cream);
+    }
+
+    .iitb-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      margin-bottom: 70px;
+      align-items: end;
+    }
+
+    .iitb-title {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.05;
+    }
+
+    .iitb-desc {
+      font-size: 1rem;
+      color: var(--warm-gray);
+      line-height: 1.85;
+    }
+
+    .iitb-img-banner {
+      width: 100%;
+      aspect-ratio: 21/7;
+      overflow: hidden;
+      background: var(--ink-mid);
+      margin-bottom: 60px;
+    }
+
+    .iitb-snapshots {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .iitb-snapshot {
+      position: relative;
+      overflow: hidden;
+      background: var(--ink-mid);
+      aspect-ratio: 16/9;
+    }
+
+    .iitb-snapshot img {
+      transition: transform 0.5s ease;
+      filter: brightness(0.85);
+    }
+
+    .iitb-snapshot:hover img { transform: scale(1.03); }
+
+    .iitb-snapshot-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      padding: 24px 14px 12px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--cream-dark);
+      padding: 32px 28px;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+    }
+
+    .project-card-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(0,0,0,0.06);
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      line-height: 1;
+    }
+
+    .project-card-eyebrow {
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--copper);
+      margin-bottom: 14px;
+    }
+
+    .project-card h3 {
+      font-size: 1.35rem;
+      font-weight: 300;
+      margin-bottom: 12px;
+      color: var(--ink);
+    }
+
+    .project-card p {
+      font-size: 0.88rem;
+      color: var(--warm-gray);
+      line-height: 1.75;
+    }
+
+    .project-card-impact {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(0,0,0,0.07);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: 0.04em;
+    }
+
+    /* =============================================
+       A PH SCALE / AGENCY
+    ============================================= */
+    #aphscale {
+      padding: var(--section-pad) 0;
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .aph-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .aph-title {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.05;
+      margin: 18px 0 24px;
+    }
+
+    .aph-desc {
+      font-size: 1rem;
+      color: var(--warm-gray-light);
+      line-height: 1.85;
+    }
+
+    .aph-visual {
+      position: relative;
+    }
+
+    .aph-img {
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .aph-img img { filter: brightness(0.8); transition: transform 0.5s; }
+    .aph-img:hover img { transform: scale(1.03); }
+
+    /* =============================================
+       AR GAME SECTION
+    ============================================= */
+    #argame {
+      padding: var(--section-pad) 0;
+      background: var(--cream-dark);
+    }
+
+    .argame-inner {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .argame-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .argame-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--copper);
+    }
+
+    .argame-title {
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 28px;
+    }
+
+    .argame-desc {
+      font-size: 0.98rem;
+      color: var(--warm-gray);
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+
+    .argame-img {
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      background: var(--ink-mid);
+    }
+
+    .argame-img img { transition: transform 0.5s; }
+    .argame-img:hover img { transform: scale(1.03); }
+
+    /* =============================================
+       FILMS / CREATIVE SECTION
+    ============================================= */
+    #films {
+      padding: var(--section-pad) 0;
+      background: var(--cream);
+    }
+
+    .films-header {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .films-title {
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 300;
+      line-height: 1.0;
+      margin: 18px 0 0;
+    }
+
+    .films-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 12px;
+    }
+
+    .film-block {
+      overflow: hidden;
+      position: relative;
+      background: var(--ink-mid);
+    }
+
+    .film-block-main {
+      grid-row: 1 / 3;
+      aspect-ratio: 3/4;
+    }
+
+    .film-block-sm {
+      aspect-ratio: 4/3;
+    }
+
+    .film-block img {
+      transition: transform 0.6s ease;
+      filter: saturate(0.75) brightness(0.8);
+    }
+
+    .film-block:hover img {
+      transform: scale(1.04);
+      filter: saturate(1) brightness(0.85);
+    }
+
+    .film-award {
+      position: absolute;
+      bottom: 16px;
+      left: 16px;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(8px);
+      padding: 8px 14px;
+      color: var(--copper-light);
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .film-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+      padding: 32px 16px 14px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .films-text {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 60px;
+      margin-top: 70px;
+      align-items: center;
+    }
+
+    .films-pull {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    .films-pull em { font-style: italic; color: var(--copper); }
+
+    .films-body {
+      font-size: 0.95rem;
+      color: var(--warm-gray);
+      line-height: 1.85;
+    }
+
+    .films-video {
+      margin-top: 42px;
+      aspect-ratio: 16/9;
+      background: var(--ink-mid);
+      overflow: hidden;
+    }
+
+    .films-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =============================================
+       TIMELINE SECTION
+    ============================================= */
+    #timeline {
+      padding: var(--section-pad) 0;
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .timeline-header {
+      margin-bottom: 70px;
+    }
+
+    .timeline-title {
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      font-weight: 300;
+      color: var(--white);
+      max-width: 500px;
+      line-height: 1.1;
+      margin-top: 16px;
+    }
+
+    .timeline-track {
+      position: relative;
+      padding-left: 48px;
+    }
+
+    .timeline-track::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--copper), rgba(180,115,51,0.1));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 52px;
+    }
+
+    .timeline-item:last-child { padding-bottom: 0; }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -52px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--copper);
+      box-shadow: 0 0 0 3px rgba(180,115,51,0.2);
+    }
+
+    .timeline-year {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 8px;
+    }
+
+    .timeline-item h3 {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      font-size: 0.88rem;
+      color: var(--warm-gray-light);
+      line-height: 1.75;
+      max-width: 520px;
+    }
+
+    /* =============================================
+       ACHIEVEMENTS
+    ============================================= */
+    #achievements {
+      padding: var(--section-pad) 0;
+      background: var(--cream-dark);
+    }
+
+    .achievements-header { margin-bottom: 60px; }
+
+    .achievements-title {
+      font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      margin-top: 16px;
+    }
+
+    .ach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(0,0,0,0.06);
+    }
+
+    .ach-item {
+      background: var(--cream-dark);
+      padding: 36px 28px;
+      transition: background 0.3s;
+    }
+
+    .ach-item:hover { background: var(--white); }
+
+    .ach-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      color: var(--copper);
+      margin-bottom: 20px;
+    }
+
+    .ach-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+
+    .ach-desc {
+      font-size: 0.83rem;
+      color: var(--warm-gray);
+      line-height: 1.7;
+    }
+
+    /* =============================================
+       CLOSING
+    ============================================= */
+    #closing {
+      padding: clamp(100px, 14vw, 180px) 0;
+      background: var(--ink);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #closing::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(180,115,51,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .closing-eyebrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 28px;
+    }
+
+    .closing-statement {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+
+    .closing-statement em {
+      font-style: italic;
+      color: var(--copper-light);
+    }
+
+    .closing-sub {
+      font-size: 1rem;
+      color: var(--warm-gray-light);
+      max-width: 480px;
+      margin: 0 auto 52px;
+      line-height: 1.8;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 60px 0 40px;
+      color: var(--cream);
+    }
+
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 50px;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      font-size: 0.8rem;
+      color: var(--warm-gray-light);
+      line-height: 1.7;
+    }
+
+    .footer-col-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 20px;
+    }
+
+    .footer-link {
+      display: block;
+      font-size: 0.88rem;
+      color: var(--warm-gray-light);
+      margin-bottom: 10px;
+      transition: color 0.25s;
+    }
+
+    .footer-link:hover { color: var(--white); }
+
+    .footer-bottom {
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.2);
+    }
+
+    .btn-resume {
+      display: inline-block;
+      padding: 12px 28px;
+      border: 1px solid var(--copper);
+      color: var(--copper);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .btn-resume:hover {
+      background: var(--copper);
+      color: var(--white);
+    }
+
+    /* =============================================
+       ANIMATIONS
+    ============================================= */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-tag   { animation: fadeUp 0.7s ease 0.2s both; }
+    .hero-headline { animation: fadeUp 0.7s ease 0.4s both; }
+    .hero-sub   { animation: fadeUp 0.7s ease 0.55s both; }
+    .hero-place { animation: fadeUp 0.7s ease 0.65s both; }
+    .hero-ctas  { animation: fadeUp 0.7s ease 0.75s both; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .grid-3 { grid-template-columns: 1fr 1fr; }
+      .ach-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-cards { grid-template-columns: 1fr 1fr; }
+      .origin-grid { grid-template-columns: repeat(2, 1fr); }
+      .films-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .film-block-main { grid-row: auto; aspect-ratio: 16/9; }
+      .hilti-layout { grid-template-columns: 1fr; gap: 50px; }
+      .hilti-left { position: static; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      #hero { grid-template-columns: 1fr; min-height: 100svh; }
+      .hero-right {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-left {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(to top, rgba(22,20,18,0.9) 60%, rgba(22,20,18,0.5));
+        padding-bottom: 80px;
+      }
+      .hero-right::after { background: linear-gradient(to top, rgba(22,20,18,0.9), transparent 60%); }
+
+      .origin-text { grid-template-columns: 1fr; }
+      .grid-2, .aph-grid, .argame-inner, .faoud-main, .iitb-header { grid-template-columns: 1fr; gap: 40px; }
+      .faoud-images { grid-template-columns: 1fr; }
+      .faoud-img-primary { grid-column: auto; }
+      .films-text { grid-template-columns: 1fr; }
+      .origin-grid { grid-template-columns: repeat(2, 1fr); }
+      .project-cards { grid-template-columns: 1fr; }
+      .ach-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .nav-links { display: none; }
+      .faoud-stats { grid-template-columns: 1fr 1fr; }
+      .iitb-snapshots { grid-template-columns: 1fr; }
+      .films-grid { grid-template-columns: 1fr; }
+      .film-block-main { aspect-ratio: 16/9; }
+    }
+
+    @media (max-width: 480px) {
+      .ach-grid { grid-template-columns: 1fr; }
+      .faoud-stats { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-  
-  <section class="header1 cid-s48MCQYojq mbr-fullscreen mbr-parallax-background" id="header1-f">
 
-    
+  <!-- ============================================
+       NAVIGATION
+  ============================================= -->
+  <nav>
+    <span class="nav-logo">Harsh Jha</span>
+    <ul class="nav-links">
+      <li><a href="#faoud">Faoud</a></li>
+      <li><a href="#iitb">Building</a></li>
+      <li><a href="#films">Films</a></li>
+      <li><a href="#timeline">Journey</a></li>
+      <li><a href="#closing">Contact</a></li>
+    </ul>
+  </nav>
 
-    <div class="mbr-overlay" style="opacity: 0.4; background-color: rgb(140, 175, 240);"></div>
-
-    <div class="align-center container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-12 col-lg-8">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>TWENTY-20</strong></h1>
-                <div class="slider">
-  <div class="container">
-    <div class="slide x"></div>
-    <div class="slide y"></div>
-    <div class="slide z"></div>
-  </div>
-  <div class="shadow"></div>
-</div>
-                
-                <p class="mbr-text mbr-fonts-style display-7"><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
-                <div class="mbr-section-btn mt-3"><a class="btn btn-success display-5" href="serious/index.html">Feeling Serious</a> <a class="btn btn-success display-5" href="meme/index.html">इतने गंभीर क्यों हो ?</a></div>
-            </div>
-        </div>
+  <!-- ============================================
+       HERO SECTION
+  ============================================= -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-tag">Builder · Founder · Storyteller</p>
+      <h1 class="hero-headline">
+        Building<br />
+        at the<br />
+        <em>edge of</em><br />
+        what's real.
+      </h1>
+      <p class="hero-sub">
+        Across manufacturing, software, industrial systems, and the stories that tie them together.
+      </p>
+      <p class="hero-place">From Purnea to IIT Bombay — building the future of manufacturing.</p>
+      <div class="hero-ctas">
+        <a href="#timeline" class="btn-primary">View Journey</a>
+        <a href="#closing" class="btn-ghost">Get in Touch</a>
+      </div>
     </div>
-</section><section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/g" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Designed by <a href="https://mobirise.site/b" style="color:#aaa;">Harsh Jha</a> </p></section><script src="assets/web/assets/jquery/jquery.min.js"></script>  <script src="assets/popper/popper.min.js"></script>  <script src="assets/tether/tether.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/parallax/jarallax.min.js"></script>  <script src="assets/theme/js/script.js"></script>  
-<script  src="./script.js"></script>
-  
-  
+    <div class="hero-right">
+      <img
+        src="./assets/portfolio/profile.png"
+        alt="Harsh Jha Profile"
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ORIGIN SECTION
+  ============================================= -->
+  <section id="origin">
+    <div class="container">
+      <div class="origin-header">
+        <p class="eyebrow">The Beginning</p>
+        <h2 class="origin-title">A story that started where<br /><em>no one expected it to.</em></h2>
+        <p class="origin-intro">
+          Not every founder's journey begins in a city with a startup ecosystem. Sometimes it begins in a quiet town — with curiosity, ambition, and the feeling that the world is larger than what surrounds you.
+        </p>
+      </div>
+
+      <!-- 4-image journey strip -->
+      <div class="origin-grid">
+        <div class="origin-img-block">
+          <img src="assets/portfolio/purnea.jpg" alt="Purnea, Bihar" loading="lazy" decoding="async" />
+          <div class="origin-img-caption">Purnea, Bihar</div>
+        </div>
+        <div class="origin-img-block">
+          <img src="assets/portfolio/iitb_degree.jpeg" alt="IIT Bombay" loading="lazy" decoding="async" />
+          <div class="origin-img-caption">IIT Bombay</div>
+        </div>
+        <div class="origin-img-block">
+          <img src="assets/portfolio/swiss_symposium.JPG" alt="Switzerland" loading="lazy" decoding="async" />
+          <div class="origin-img-caption">Switzerland</div>
+        </div>
+        <div class="origin-img-block">
+          <img src="assets/portfolio/avery_faoud.png" alt="Faoud / Avery Dennison" loading="lazy" decoding="async" />
+          <div class="origin-img-caption">Faoud — Built Here</div>
+        </div>
+      </div>
+
+      <!-- Reflective text -->
+      <div class="origin-text">
+        <div class="origin-pull-quote">
+          "I didn't come from a place that made it easy.<br />
+          I came from a place that made it <em>necessary.</em>"
+        </div>
+        <div class="origin-body">
+          <p>
+            Growing up in Purnea, Bihar, ambition had to be self-generated. There was no startup culture, no network of mentors, no visible path. But there was a particular kind of drive that small towns give you — the one that asks what's possible beyond the horizon.
+          </p>
+          <p>
+            That drive carried me to IIT Bombay, where I didn't just study — I built. Products used by thousands. Communities that shaped campus life. Systems that outlasted my time there. And then to Hilti Group, where I touched something different: the intersection of industrial hardware, large-scale software, and real-world manufacturing.
+          </p>
+          <p>
+            Now, all of it is channelled into Faoud — a startup that I believe is the most important thing I've worked on.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container"><div class="section-divider"></div></div>
+
+  <!-- ============================================
+       FAOUD — FEATURED SECTION
+  ============================================= -->
+  <section id="faoud">
+    <div class="container faoud-inner">
+
+      <div class="faoud-top">
+        <div class="faoud-title-block">
+          <p class="faoud-eyebrow">Current Flagship — Founder</p>
+          <h2 class="faoud-headline">
+            Faoud<br />
+            <em>Factory on</em><br />
+            Cloud.
+          </h2>
+        </div>
+        <div class="faoud-tagline-block">
+          <p class="faoud-tagline">
+            Manufacturing has been running on gut, spreadsheets, and institutional memory for decades. Faoud is changing that.
+          </p>
+          <span class="faoud-role-pill">Founder &amp; Builder</span>
+        </div>
+      </div>
+
+      <div class="faoud-main">
+        <!-- Faoud images -->
+        <div class="faoud-images">
+          <div class="faoud-img-primary">
+            <img src="assets/portfolio/faoud_dashboard.png" alt="Faoud Dashboard" loading="lazy" decoding="async" />
+          </div>
+          <div class="faoud-img-secondary">
+            <img src="assets/portfolio/archi_faoud.png" alt="Faoud Architecture" loading="lazy" decoding="async" />
+          </div>
+          <div class="faoud-img-secondary">
+            <img src="assets/portfolio/avery_faoud.png" alt="Faoud Presentation" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- Faoud text -->
+        <div class="faoud-content">
+          <p class="faoud-what">What It Is</p>
+          <p class="faoud-desc">
+            A manufacturing intelligence platform — built to bring clarity, traceability, and systems-thinking to factory floors.
+          </p>
+          <p class="faoud-body">
+            Manufacturing SMEs in India operate in opacity. Orders are tracked on WhatsApp. Quality decisions are made on instinct. Shop floors generate data that never becomes information. Faoud is infrastructure for this gap.
+          </p>
+          <p class="faoud-body">
+            We are building tools for production tracking, quality control, and operational visibility — designed to meet manufacturers where they are, not where software vendors wish they were.
+          </p>
+          <p class="faoud-body">
+            Faoud is not just a product. It is a perspective: that the future of Indian manufacturing runs through better software, not just better hardware.
+          </p>
+        </div>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="faoud-stats">
+        <div class="faoud-stat">
+          <span class="faoud-stat-num">₹2Cr+</span>
+          <span class="faoud-stat-label">GMV Tracked</span>
+        </div>
+        <div class="faoud-stat">
+          <span class="faoud-stat-num">12+</span>
+          <span class="faoud-stat-label">Factory Pilots</span>
+        </div>
+        <div class="faoud-stat">
+          <span class="faoud-stat-num">3</span>
+          <span class="faoud-stat-label">Core Modules Live</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================
+       HILTI / TECH SECTION
+  ============================================= -->
+  <section id="hilti">
+    <div class="container">
+      <div class="hilti-layout">
+        <!-- Sticky left column -->
+        <div class="hilti-left">
+          <p class="eyebrow">Industrial Software</p>
+          <h2 class="hilti-title">
+            Where hardware<br />
+            meets the cloud.
+          </h2>
+          <p class="hilti-intro">
+            At Hilti Group, I worked on modeling software used in large-scale MEP and structural applications — touching systems that operate at the intersection of 3D modeling, industrial hardware, and real construction environments.
+          </p>
+          <p class="hilti-intro">
+            An observation visit to Switzerland — including the Lonza facility — grounded this work in physical reality. It changed how I think about software.
+          </p>
+          <!-- Switzerland image -->
+          <div class="hilti-img">
+            <img src="assets/portfolio/swiss.png" alt="Switzerland Visit" loading="lazy" decoding="async" />
+          </div>
+        </div>
+
+        <!-- Tech cards -->
+        <div class="hilti-right">
+          <div class="tech-card">
+            <p class="tech-card-eyebrow">Modeling Software</p>
+            <h3>3D Industrial Systems</h3>
+            <p>Contributed to software that enables engineers to model modular support systems for MEP applications. Worked on geometry logic, real-time rendering decisions, and integration across platforms.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Three.js</span>
+              <span class="tech-tag">3D Geometry</span>
+              <span class="tech-tag">Real-time Rendering</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <p class="tech-card-eyebrow">Platform Integrations</p>
+            <h3>BIM Ecosystem</h3>
+            <p>Worked with integrations across Navisworks, Revit, and RSTAB — understanding how construction data flows through digital modeling environments and where software augments physical installation.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Navisworks</span>
+              <span class="tech-tag">Revit</span>
+              <span class="tech-tag">RSTAB</span>
+              <span class="tech-tag">BIM</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <p class="tech-card-eyebrow">Team MEP</p>
+            <h3>Collaborative Engineering</h3>
+            <p>Part of Team MEP — a cross-functional group focused on mechanical, electrical, and plumbing systems software. Experienced agile collaboration across global engineering teams.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Hilti Group</span>
+              <span class="tech-tag">MEP Systems</span>
+              <span class="tech-tag">Global Team</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <p class="tech-card-eyebrow">Switzerland Exposure</p>
+            <h3>From Code to Construction</h3>
+            <p>Visited Lonza facility in Switzerland — observing how software-designed systems translate to hardware installations in large industrial environments. This grounded my understanding of software's physical stakes.</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Industrial Applications</span>
+              <span class="tech-tag">Hardware Fitting</span>
+              <span class="tech-tag">Switzerland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       IIT BOMBAY — BUILDER SECTION
+  ============================================= -->
+  <section id="iitb">
+    <div class="container">
+      <div class="iitb-header">
+        <div>
+          <p class="eyebrow">IIT Bombay — Builder Years</p>
+          <h2 class="iitb-title">
+            Products built<br />
+            for real<br />
+            communities.
+          </h2>
+        </div>
+        <p class="iitb-desc">
+          At IIT Bombay, I didn't wait for a startup — I built one within the campus itself. Products that touched thousands of students. Communities that reshaped how people talked to each other. Systems that had to work at scale, from day one.
+        </p>
+      </div>
+
+      <!-- Campus banner image -->
+      <div class="iitb-img-banner">
+        <img src="assets/portfolio/iitb_hostel.jpg" alt="IIT Bombay Hostel Life" loading="lazy" decoding="async" style="object-position: center;" />
+      </div>
+
+      <div class="iitb-snapshots">
+        <div class="iitb-snapshot">
+          <img src="assets/portfolio/devcom.jpg" alt="DevCom IIT Bombay" loading="lazy" decoding="async" />
+          <div class="iitb-snapshot-caption">DevCom — Builder Community</div>
+        </div>
+        <div class="iitb-snapshot">
+          <img src="assets/portfolio/travel.png" alt="IIT Bombay Campus Journey" loading="lazy" decoding="async" />
+          <div class="iitb-snapshot-caption">Campus Journey</div>
+        </div>
+      </div>
+
+      <!-- Project cards -->
+      <div class="project-cards">
+        <div class="project-card">
+          <span class="project-card-number">01</span>
+          <p class="project-card-eyebrow">Campus Platform</p>
+          <h3>InstiApp</h3>
+          <p>Contributed to InstiApp — the central campus application for events, academics, and student life at IIT Bombay. Built features that shaped daily campus interaction.</p>
+          <p class="project-card-impact">20,000+ Downloads</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-card-number">02</span>
+          <p class="project-card-eyebrow">Community Layer</p>
+          <h3>Conversations Feature</h3>
+          <p>Designed and built a community conversations feature within InstiApp — covering local politics, buy/sell, and student interaction. Essentially a campus social layer.</p>
+          <p class="project-card-impact">Active Campus-wide Adoption</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-card-number">03</span>
+          <p class="project-card-eyebrow">Infrastructure</p>
+          <h3>Mess-I</h3>
+          <p>Built systems for campus mess operations — inventory, feedback, and operational tooling for student dining infrastructure at scale.</p>
+          <p class="project-card-impact">Campus Mess Operations</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-card-number">04</span>
+          <p class="project-card-eyebrow">Onboarding</p>
+          <h3>NewBiew — Induction Portal</h3>
+          <p>Contributed to NewBiew, the induction portal for incoming students — a welcoming system that shaped the first experience of thousands of new IITians.</p>
+          <p class="project-card-impact">All New Students, Every Year</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-card-number">05</span>
+          <p class="project-card-eyebrow">Developer Community</p>
+          <h3>DevCom</h3>
+          <p>Active contributor to DevCom — IIT Bombay's developer community. Participated in building the culture of technical building and open-source contribution on campus.</p>
+          <p class="project-card-impact">Developer Ecosystem</p>
+        </div>
+
+        <div class="project-card">
+          <span class="project-card-number">06</span>
+          <p class="project-card-eyebrow">Creative Technology</p>
+          <h3>AR Game — Computer Vision</h3>
+          <p>Built an AR game integrating computer vision with a physical toy car — blending hardware and software interaction into a cohesive game world. Not just code, but world-building.</p>
+          <p class="project-card-impact">Hardware + Software Integration</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       A PH SCALE — AGENCY SECTION
+  ============================================= -->
+  <section id="aphscale">
+    <div class="container">
+      <div class="aph-grid">
+        <div>
+          <p class="eyebrow" style="color: var(--copper-light);">Entrepreneurial Experiment</p>
+          <h2 class="aph-title">
+            A pH Scale —<br />
+            the agency<br />
+            that started<br />
+            <em>everything.</em>
+          </h2>
+          <p class="aph-desc">
+            In my final year at IIT Bombay, I started A pH Scale — a marketing and storytelling agency born from the conviction that narrative is a form of engineering. Every brand has a story that hasn't been told well yet. We told it.
+          </p>
+          <br />
+          <p class="aph-desc">
+            It was an experiment in business, creativity, and execution — proof that a technical person can also understand what moves people. Design, writing, strategy — all of it, built from scratch.
+          </p>
+        </div>
+        <div class="aph-visual">
+          <div class="aph-img">
+            <img src="assets/portfolio/theatre.png" alt="A pH Scale creative work" loading="lazy" decoding="async" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FILMS / CREATIVE SECTION
+  ============================================= -->
+  <section id="films">
+    <div class="container">
+      <div class="films-header">
+        <p class="eyebrow">Creative Work</p>
+        <h2 class="films-title">
+          Systems builder.<br />
+          <em class="serif-italic">Storyteller at heart.</em>
+        </h2>
+      </div>
+
+      <!-- Films image grid -->
+      <div class="films-grid">
+        <div class="film-block film-block-main">
+          <img src="./assets/portfolio/films.png" alt="Filmmaking" loading="lazy" decoding="async" />
+          <div class="film-award">Inter-IIT Winner</div>
+        </div>
+        <div class="film-block film-block-sm">
+          <img src="assets/portfolio/film_making.JPG" alt="Filmmaking Process" loading="lazy" decoding="async" />
+          <div class="film-caption">Film Making</div>
+        </div>
+        <div class="film-block film-block-sm">
+          <img src="assets/portfolio/interiit.jpeg" alt="Inter-IIT" loading="lazy" decoding="async" />
+          <div class="film-caption">Inter-IIT</div>
+        </div>
+        <div class="film-block film-block-sm">
+          <img src="assets/portfolio/interiit2.JPG" alt="Inter-IIT Team" loading="lazy" decoding="async" />
+          <div class="film-caption">Inter-IIT Team</div>
+        </div>
+        <div class="film-block film-block-sm">
+          <img src="assets/portfolio/theatre.png" alt="Theatre" loading="lazy" decoding="async" />
+          <div class="film-caption">Theatre &amp; Performance</div>
+        </div>
+      </div>
+
+      <div class="films-text">
+        <div class="films-pull">
+          "The best engineers are<br />
+          also the best <em>storytellers</em> —<br />
+          they just don't always<br />
+          know it yet."
+        </div>
+        <div>
+          <p class="films-body">
+            Filmmaking taught me what no engineering course could: how to shape attention, how to create meaning from sequence, and how to make someone care about something abstract. I won at Inter-IIT film competitions and received the Xiaomi Ad Award — recognition that storytelling, when done with precision, is indistinguishable from craft.
+          </p>
+          <br />
+          <p class="films-body">
+            This isn't a hobby that runs parallel to my technical work. It is the lens through which I build products — with a sense of narrative, user experience as story, and interfaces as conversations.
+          </p>
+        </div>
+      </div>
+
+      <div class="films-video">
+        <video controls preload="metadata" playsinline poster="assets/portfolio/purnea.jpg" aria-label="Political Purnea Film">
+          <source src="assets/portfolio/political_purnea.MP4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       TIMELINE SECTION
+  ============================================= -->
+  <section id="timeline">
+    <div class="container">
+      <div class="timeline-header">
+        <p class="eyebrow" style="color: var(--copper-light);">The Journey</p>
+        <h2 class="timeline-title">Every place<br />changed the work.</h2>
+      </div>
+
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <p class="timeline-year">The Beginning</p>
+          <h3>Purnea, Bihar</h3>
+          <p>Grew up in Purnea — a small city in Bihar where ambition had to be self-made. No startup culture, no visible shortcuts. Just curiosity and a drive to understand how the world worked, and how to build in it.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Entrance &amp; Arrival</p>
+          <h3>IIT Bombay</h3>
+          <p>Joined IIT Bombay for Computer Science — and immediately started building. The campus became a laboratory for products, communities, and creative work. Everything I know about building for users was shaped here.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Builder Years</p>
+          <h3>InstiApp · DevCom · Mess-I · NewBiew</h3>
+          <p>Four years of shipping. Products used by 20,000+ students. Communities that shaped campus discourse. Systems that handled real-world constraints. Every project was a lesson in scope, scale, and speed.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Creative Chapter</p>
+          <h3>Films · A pH Scale · Xiaomi Award</h3>
+          <p>Ran a marketing agency, made films that won at Inter-IIT, won an ad award from Xiaomi. Discovered that building things and telling stories about them are not separate disciplines — they are the same skill, expressed differently.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Industry Exposure</p>
+          <h3>Hilti Group</h3>
+          <p>Joined Hilti as an engineer working on 3D modeling software for MEP systems. Built in Three.js, integrated with Navisworks, Revit, and RSTAB. Understood industrial software from the inside.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Global Perspective</p>
+          <h3>Switzerland — Lonza &amp; Beyond</h3>
+          <p>Observation visit to Switzerland — including the Lonza facility. Saw how software-designed modular systems translate into physical hardware installations. The gap between digital model and factory floor became viscerally clear.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Now</p>
+          <h3>Faoud — Factory on Cloud</h3>
+          <p>Building Faoud: a manufacturing intelligence platform for India's factory floors. Every experience — technical, creative, industrial — flows into this. This is the work that matters most.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ACHIEVEMENTS
+  ============================================= -->
+  <section id="achievements">
+    <div class="container">
+      <div class="achievements-header">
+        <p class="eyebrow">Recognition</p>
+        <h2 class="achievements-title">
+          Built and<br />
+          recognized for it.
+        </h2>
+      </div>
+
+      <div class="ach-grid">
+        <div class="ach-item">
+          <p class="ach-num">01</p>
+          <p class="ach-title">Inter-IIT Film Winner</p>
+          <p class="ach-desc">Won at the Inter-IIT cultural competition for film — competing across top technical institutes in India.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">02</p>
+          <p class="ach-title">Xiaomi Ad Award</p>
+          <p class="ach-desc">Received a creative award from Xiaomi for advertising work — proof that technical minds can build compelling narratives.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">03</p>
+          <p class="ach-title">InstiApp — 20K+ Users</p>
+          <p class="ach-desc">Contributed to IIT Bombay's flagship student app, reaching over 20,000 downloads across the campus community.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">04</p>
+          <p class="ach-title">Hilti Group — Industrial Software</p>
+          <p class="ach-desc">Worked on Hilti's global modeling software — contributing to systems used in large-scale MEP and structural projects worldwide.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">05</p>
+          <p class="ach-title">Faoud — Avery Dennison Recognition</p>
+          <p class="ach-desc">Faoud presented and recognized at the Avery Dennison ecosystem — validating its approach to manufacturing software.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">06</p>
+          <p class="ach-title">Switzerland Industrial Visit</p>
+          <p class="ach-desc">Selected for an observation visit to Lonza, Switzerland — gaining firsthand understanding of industrial hardware systems and their software backbone.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">07</p>
+          <p class="ach-title">IIT Bombay — Computer Science</p>
+          <p class="ach-desc">Graduate of IIT Bombay — one of India's most competitive technical institutions — in Computer Science Engineering.</p>
+        </div>
+        <div class="ach-item">
+          <p class="ach-num">08</p>
+          <p class="ach-title">A pH Scale — Founder</p>
+          <p class="ach-desc">Founded and ran a creative marketing agency from campus — proving that technical builders can also think in brand, story, and market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CLOSING STATEMENT
+  ============================================= -->
+  <section id="closing">
+    <div class="container">
+      <p class="closing-eyebrow">A Parting Thought</p>
+      <h2 class="closing-statement">
+        The best systems are built by people who remember<br />
+        <em>where they came from</em> — and refuse<br />
+        to be limited by it.
+      </h2>
+      <p class="closing-sub">
+        I came from Purnea. I build for the world. Everything between those two facts is the story I'm still writing — one system, one product, one factory at a time.
+      </p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="mailto:your@email.com" class="btn-primary">Get in Touch</a>
+        <a href="#timeline" class="btn-ghost">Read the Journey</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+  ============================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <p class="footer-brand">Harsh Jha</p>
+          <p class="footer-tagline">
+            Builder · Founder · Storyteller<br />
+            IIT Bombay · Purnea · The World
+          </p>
+        </div>
+        <div>
+          <p class="footer-col-title">Connect</p>
+          <a href="https://linkedin.com/in/harsh-kr-jha" class="footer-link" target="_blank">LinkedIn →</a>
+          <a href="mailto:your@email.com" class="footer-link">Email →</a>
+          <a href="#" class="footer-link">Twitter / X →</a>
+        </div>
+        <div>
+          <p class="footer-col-title">Work</p>
+          <a href="#faoud" class="footer-link">Faoud</a>
+          <a href="#hilti" class="footer-link">Hilti Group</a>
+          <a href="#iitb" class="footer-link">IIT Bombay Projects</a>
+          <a href="#films" class="footer-link">Films &amp; Creative</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2025 Harsh Jha. All rights reserved.</p>
+        <a href="#" class="btn-resume">Download Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       LIGHT SCROLL-TRIGGERED FADE-IN (JS)
+  ============================================= -->
+  <script>
+    // Intersection Observer for section reveal animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    // Apply to all major inner blocks
+    document.querySelectorAll(
+      '.tech-card, .project-card, .ach-item, .timeline-item, .origin-img-block, .faoud-stat'
+    ).forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(22px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  </script>
+
 </body>
 </html>

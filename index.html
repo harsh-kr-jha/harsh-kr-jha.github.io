@@ -371,6 +371,17 @@
     }
 
     .origin-pull-quote em { font-style: italic; color: var(--copper); }
+    .quote-attribution {
+      display: block;
+      margin-top: 14px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--warm-gray);
+    }
+    .quote-attribution-light { color: rgba(255,255,255,0.74); }
 
     .origin-body p {
       font-size: 0.98rem;
@@ -530,6 +541,41 @@
       color: var(--warm-gray-light);
       line-height: 1.85;
       margin-bottom: 20px;
+    }
+
+    .faoud-built {
+      margin: 0 0 28px;
+      padding: 18px 20px;
+      border-left: 2px solid var(--copper);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .faoud-built-title {
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .faoud-built-list {
+      margin: 0;
+      padding-left: 18px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .faoud-built-list li {
+      font-size: 0.9rem;
+      color: var(--warm-gray-light);
+      line-height: 1.7;
+    }
+
+    .faoud-built-note {
+      margin-top: 12px;
+      font-size: 0.86rem;
+      color: var(--copper-light);
     }
 
     .faoud-stats {
@@ -970,6 +1016,13 @@
       line-height: 1.35;
       color: var(--ink);
     }
+    .films-pull-white {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.35;
+      color: var(--white);
+    }
 
     .films-pull em { font-style: italic; color: var(--copper); }
 
@@ -1351,10 +1404,10 @@
     <div class="hero-left">
       <p class="hero-tag">Builder · Founder · Storyteller</p>
       <h1 class="hero-headline">
-        Building<br />
-        at the<br />
-        <em>edge of</em><br />
-        what's real.
+        Building <br />
+        systems that operate<br />
+        in the<br />
+        <em>real world.</em><br />
       </h1>
       <p class="hero-sub">
         Across manufacturing, software, industrial systems, and the stories that tie them together.
@@ -1387,7 +1440,7 @@
     <div class="container">
       <div class="origin-header">
         <p class="eyebrow">The Beginning</p>
-        <h2 class="origin-title">A story that started where<br /><em>no one expected it to.</em></h2>
+        <h2 class="origin-title">A story that started in<br /><em>Purnea, Bihar, India.</em></h2>
         <p class="origin-intro">
           Not every founder's journey begins in a city with a startup ecosystem. Sometimes it begins in a quiet town — with curiosity, ambition, and the feeling that the world is larger than what surrounds you.
         </p>
@@ -1416,8 +1469,9 @@
       <!-- Reflective text -->
       <div class="origin-text">
         <div class="origin-pull-quote">
-          "I didn't come from a place that made it easy.<br />
-          I came from a place that made it <em>necessary.</em>"
+          "I am not a product of my circumstances.<br />
+          I am a product of my <em>decisions.</em>"
+          <span class="quote-attribution">Stephen R. Covey</span>
         </div>
         <div class="origin-body">
           <p>
@@ -1427,7 +1481,7 @@
             That drive carried me to IIT Bombay, where I didn't just study — I built. Products used by thousands. Communities that shaped campus life. Systems that outlasted my time there. And then to Hilti Group, where I touched something different: the intersection of industrial hardware, large-scale software, and real-world manufacturing.
           </p>
           <p>
-            Now, all of it is channelled into Faoud — a startup that I believe is the most important thing I've worked on.
+            Now, all of it is channelled into <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — a startup that I believe is the most important thing I've worked on.
           </p>
         </div>
       </div>
@@ -1446,14 +1500,14 @@
         <div class="faoud-title-block">
           <p class="faoud-eyebrow">Current Flagship — Founder</p>
           <h2 class="faoud-headline">
-            Faoud<br />
-            <em>Factory on</em><br />
-            Cloud.
+            Faoud - 
+            <em>Fa</em>ctory on
+            Cl<em>oud</em>.
           </h2>
         </div>
         <div class="faoud-tagline-block">
           <p class="faoud-tagline">
-            Manufacturing has been running on gut, spreadsheets, and institutional memory for decades. Faoud is changing that.
+            Manufacturing has been running on gut, spreadsheets, and institutional memory for decades. <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is changing that.
           </p>
           <span class="faoud-role-pill">Founder &amp; Builder</span>
         </div>
@@ -1479,14 +1533,26 @@
           <p class="faoud-desc">
             A manufacturing intelligence platform — built to bring clarity, traceability, and systems-thinking to factory floors.
           </p>
+          <div class="faoud-built">
+            <p class="faoud-built-title">Built</p>
+            <ul class="faoud-built-list">
+              <li>requirement to factory discovery workflow</li>
+              <li>bid comparison system</li>
+              <li>quality and execution tracking logic</li>
+              <li>structured manufacturing data layer</li>
+            </ul>
+          </div>
           <p class="faoud-body">
-            Manufacturing SMEs in India operate in opacity. Orders are tracked on WhatsApp. Quality decisions are made on instinct. Shop floors generate data that never becomes information. Faoud is infrastructure for this gap.
+            Manufacturing SMEs in India operate in opacity. Orders are tracked on WhatsApp. Quality decisions are made on instinct. Shop floors generate data that never becomes information. <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is infrastructure for this gap.
           </p>
           <p class="faoud-body">
             We are building tools for production tracking, quality control, and operational visibility — designed to meet manufacturers where they are, not where software vendors wish they were.
           </p>
           <p class="faoud-body">
-            Faoud is not just a product. It is a perspective: that the future of Indian manufacturing runs through better software, not just better hardware.
+            <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is an initiative towards the future of Indian manufacturing that runs through better software, not just better hardware.
+          </p>
+          <p class="faoud-body">
+            <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Visit Faoud →</a>
           </p>
         </div>
       </div>
@@ -1494,16 +1560,16 @@
       <!-- Stats bar -->
       <div class="faoud-stats">
         <div class="faoud-stat">
-          <span class="faoud-stat-num">₹2Cr+</span>
-          <span class="faoud-stat-label">GMV Tracked</span>
+          <span class="faoud-stat-num">180+</span>
+          <span class="faoud-stat-label">Factories Onboarded</span>
         </div>
         <div class="faoud-stat">
-          <span class="faoud-stat-num">12+</span>
-          <span class="faoud-stat-label">Factory Pilots</span>
+          <span class="faoud-stat-num">25+</span>
+          <span class="faoud-stat-label">Brands on Platform</span>
         </div>
         <div class="faoud-stat">
-          <span class="faoud-stat-num">3</span>
-          <span class="faoud-stat-label">Core Modules Live</span>
+          <span class="faoud-stat-num">Done</span>
+          <span class="faoud-stat-label">Pilot Orders for Validation</span>
         </div>
       </div>
 
@@ -1626,8 +1692,8 @@
         <div class="project-card">
           <span class="project-card-number">01</span>
           <p class="project-card-eyebrow">Campus Platform</p>
-          <h3>InstiApp</h3>
-          <p>Contributed to InstiApp — the central campus application for events, academics, and student life at IIT Bombay. Built features that shaped daily campus interaction.</p>
+          <h3><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a></h3>
+          <p>Contributed to <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — the central campus application for events, academics, and student life at IIT Bombay. Built features that shaped daily campus interaction.</p>
           <p class="project-card-impact">20,000+ Downloads</p>
         </div>
 
@@ -1635,7 +1701,7 @@
           <span class="project-card-number">02</span>
           <p class="project-card-eyebrow">Community Layer</p>
           <h3>Conversations Feature</h3>
-          <p>Designed and built a community conversations feature within InstiApp — covering local politics, buy/sell, and student interaction. Essentially a campus social layer.</p>
+          <p>Designed and built a community conversations feature within <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — covering local politics, buy/sell, and student interaction. Essentially a campus social layer.</p>
           <p class="project-card-impact">Active Campus-wide Adoption</p>
         </div>
 
@@ -1689,7 +1755,7 @@
             <em>everything.</em>
           </h2>
           <p class="aph-desc">
-            In my final year at IIT Bombay, I started A pH Scale — a marketing and storytelling agency born from the conviction that narrative is a form of engineering. Every brand has a story that hasn't been told well yet. We told it.
+            In my final year at IIT Bombay, I started A pH Scale — a marketing and storytelling agency bornstarted a small storytelling and marketing agency to understand how products communicate. Every brand has a story that hasn't been told well yet. We told it.
           </p>
           <br />
           <p class="aph-desc">
@@ -1744,10 +1810,9 @@
 
       <div class="films-text">
         <div class="films-pull">
-          "The best engineers are<br />
-          also the best <em>storytellers</em> —<br />
-          they just don't always<br />
-          know it yet."
+          "There is no greater agony than bearing<br />
+          an untold <em>story</em> inside you."
+          <span class="quote-attribution">Maya Angelou</span>
         </div>
         <div>
           <p class="films-body">
@@ -1764,7 +1829,7 @@
   </section>
 
   <!-- ============================================
-       TIMELINE SECTION
+       TIMELINE SECTIONa
   ============================================= -->
   <section id="timeline">
     <div class="container">
@@ -1777,18 +1842,25 @@
         <div class="timeline-item">
           <p class="timeline-year">The Beginning</p>
           <h3>Purnea, Bihar</h3>
-          <p>Grew up in Purnea — a small city in Bihar where ambition had to be self-made. No startup culture, no visible shortcuts. Just curiosity and a drive to understand how the world worked, and how to build in it.</p>
+          <p>Grew up in Purnea — a small city in Bihar where ambition had to be self-made. No startup culture, no visible shortcuts. Just curiosity and a drive to understand how the world worked, and how to build in it. Sold servives to build homepage to get funds for idea of edtech. It was named MagicalStud. My personal gmail today is <a href="mailto:harshatmagicalstud@gmail.com">harshatmagicalstud@gmail.com</a>.</p>
+          <p>Got introduced to IITs by my guru in hometown, Batul Da Sir. He used to say</p>
+          <div class="films-pull-white">
+          "You should always try to observe<br />
+          <em>physics</em> —<br />
+          its not to learn, its to see."
+          <span class="quote-attribution quote-attribution-light">Batul Da Sir</span>
+        </div>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Entrance &amp; Arrival</p>
           <h3>IIT Bombay</h3>
-          <p>Joined IIT Bombay for Computer Science — and immediately started building. The campus became a laboratory for products, communities, and creative work. Everything I know about building for users was shaped here.</p>
+          <p>Joined IIT Bombay for Chemical Engineering major, did minor in Computer Science — and immediately started building. The campus became a laboratory for products, communities, and creative work. A lot of things I know about building for users was shaped here.</p>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Builder Years</p>
-          <h3>InstiApp · DevCom · Mess-I · NewBiew</h3>
+          <h3><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> · DevCom · Mess-I · NewBiew</h3>
           <p>Four years of shipping. Products used by 20,000+ students. Communities that shaped campus discourse. Systems that handled real-world constraints. Every project was a lesson in scope, scale, and speed.</p>
         </div>
 
@@ -1806,14 +1878,14 @@
 
         <div class="timeline-item">
           <p class="timeline-year">Global Perspective</p>
-          <h3>Switzerland — Lonza &amp; Beyond</h3>
+          <h3>Switzerland & France — Lonza &amp; Beyond</h3>
           <p>Observation visit to Switzerland — including the Lonza facility. Saw how software-designed modular systems translate into physical hardware installations. The gap between digital model and factory floor became viscerally clear.</p>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Now</p>
-          <h3>Faoud — Factory on Cloud</h3>
-          <p>Building Faoud: a manufacturing intelligence platform for India's factory floors. Every experience — technical, creative, industrial — flows into this. This is the work that matters most.</p>
+          <h3><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — Factory on Cloud</h3>
+          <p>Building <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a>: a manufacturing intelligence platform for India's factory floors. Every experience — technical, creative, industrial — flows into this. This is the work that matters most.</p>
         </div>
       </div>
     </div>
@@ -1845,7 +1917,7 @@
         </div>
         <div class="ach-item">
           <p class="ach-num">03</p>
-          <p class="ach-title">InstiApp — 20K+ Users</p>
+          <p class="ach-title"><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — 20K+ Users</p>
           <p class="ach-desc">Contributed to IIT Bombay's flagship student app, reaching over 20,000 downloads across the campus community.</p>
         </div>
         <div class="ach-item">
@@ -1855,8 +1927,8 @@
         </div>
         <div class="ach-item">
           <p class="ach-num">05</p>
-          <p class="ach-title">Faoud — Avery Dennison Recognition</p>
-          <p class="ach-desc">Faoud presented and recognized at the Avery Dennison ecosystem — validating its approach to manufacturing software.</p>
+          <p class="ach-title"><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — Avery Dennison Recognition</p>
+          <p class="ach-desc"><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> presented and recognized at the Avery Dennison ecosystem — validating its approach to manufacturing software.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">06</p>
@@ -1865,7 +1937,7 @@
         </div>
         <div class="ach-item">
           <p class="ach-num">07</p>
-          <p class="ach-title">IIT Bombay — Computer Science</p>
+          <p class="ach-title">IIT Bombay, Chemical Engineering — Computer Science Minor</p>
           <p class="ach-desc">Graduate of IIT Bombay — one of India's most competitive technical institutions — in Computer Science Engineering.</p>
         </div>
         <div class="ach-item">
@@ -1892,7 +1964,7 @@
         I came from Purnea. I build for the world. Everything between those two facts is the story I'm still writing — one system, one product, one factory at a time.
       </p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="mailto:your@email.com" class="btn-primary">Get in Touch</a>
+        <a href="mailto:jha@faoud.com" class="btn-primary">Get in Touch</a>
         <a href="#timeline" class="btn-ghost">Read the Journey</a>
       </div>
     </div>
@@ -1913,13 +1985,15 @@
         </div>
         <div>
           <p class="footer-col-title">Connect</p>
-          <a href="https://linkedin.com/in/harsh-kr-jha" class="footer-link" target="_blank">LinkedIn →</a>
-          <a href="mailto:your@email.com" class="footer-link">Email →</a>
-          <a href="#" class="footer-link">Twitter / X →</a>
+          <a href="mailto:jha@faoud.com" class="footer-link">jha@faoud.com</a>
+          <a href="mailto:harshatmagicalstud@gmail.com" class="footer-link">harshatmagicalstud@gmail.com</a>
+          <a href="tel:+916201001984" class="footer-link">6201001984</a>
         </div>
         <div>
           <p class="footer-col-title">Work</p>
-          <a href="#faoud" class="footer-link">Faoud</a>
+          <a href="https://faoud.com" class="footer-link" target="_blank" rel="noopener noreferrer">faoud.com</a>
+          <a href="https://insti.app" class="footer-link" target="_blank" rel="noopener noreferrer">insti.app</a>
+          <a href="#aphscale" class="footer-link">A pH Scale Ad Video</a>
           <a href="#hilti" class="footer-link">Hilti Group</a>
           <a href="#iitb" class="footer-link">IIT Bombay Projects</a>
           <a href="#films" class="footer-link">Films &amp; Creative</a>

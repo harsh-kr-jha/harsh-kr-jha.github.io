@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="HJ favicon">
+  <rect width="64" height="64" rx="12" fill="#161412"/>
+  <path d="M18 16h8v14h12V16h8v32h-8V37H26v11h-8V16z" fill="#F4F1EA"/>
+  <path d="M52 16h-8v20c0 5.6-2.6 7.8-6.4 7.8-1.8 0-3.8-.4-5.6-1.4l-1.8 6.2c2.4 1.2 5.2 1.8 8 1.8 8.2 0 13.8-4.6 13.8-14.2V16z" fill="#B87333"/>
+</svg>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Harsh Jha</title>
+  <title>Portfolio, Harsh Jha</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-hj.svg" />
   <link rel="shortcut icon" href="assets/favicon-hj.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -393,9 +393,9 @@
     }
 
     /* =============================================
-       FAOUD — FEATURED SECTION
+       TAMASO, FEATURED SECTION
     ============================================= */
-    #faoud {
+    #tamaso {
       background: var(--ink);
       color: var(--cream);
       padding: var(--section-pad) 0;
@@ -403,8 +403,8 @@
       overflow: hidden;
     }
 
-    #faoud::before {
-      content: 'FAOUD';
+    #tamaso::before {
+      content: 'TAMASO';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -419,9 +419,9 @@
       letter-spacing: 0.1em;
     }
 
-    .faoud-inner { position: relative; z-index: 2; }
+    .tamaso-inner { position: relative; z-index: 2; }
 
-    .faoud-top {
+    .tamaso-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -430,9 +430,7 @@
       flex-wrap: wrap;
     }
 
-    .faoud-title-block {}
-
-    .faoud-eyebrow {
+    .tamaso-eyebrow {
       font-size: 0.65rem;
       letter-spacing: 0.26em;
       text-transform: uppercase;
@@ -441,7 +439,7 @@
       font-weight: 500;
     }
 
-    .faoud-headline {
+    .tamaso-headline {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(3.5rem, 7vw, 8rem);
       font-weight: 300;
@@ -449,17 +447,17 @@
       color: var(--white);
     }
 
-    .faoud-headline em {
+    .tamaso-headline em {
       font-style: italic;
       color: var(--copper-light);
     }
 
-    .faoud-tagline-block {
+    .tamaso-tagline-block {
       max-width: 360px;
       padding-top: 20px;
     }
 
-    .faoud-tagline {
+    .tamaso-tagline {
       font-family: 'Instrument Serif', serif;
       font-style: italic;
       font-size: 1.3rem;
@@ -468,7 +466,7 @@
       margin-bottom: 20px;
     }
 
-    .faoud-role-pill {
+    .tamaso-role-pill {
       display: inline-block;
       padding: 6px 18px;
       border: 1px solid var(--copper);
@@ -478,50 +476,107 @@
       text-transform: uppercase;
     }
 
-    .faoud-main {
+    .tamaso-main {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 60px;
       align-items: start;
       margin-bottom: 60px;
     }
 
-    .faoud-images {
+    .tamaso-story {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      gap: 12px;
     }
 
-    .faoud-img-primary {
+    .tamaso-photo {
+      position: relative;
+      min-height: 250px;
+      overflow: hidden;
+      background: var(--ink-mid);
+      border: 1px solid rgba(255,255,255,0.06);
+      isolation: isolate;
+    }
+
+    .tamaso-photo:nth-child(1),
+    .tamaso-photo:nth-child(4) {
       grid-column: 1 / -1;
-      aspect-ratio: 16/9;
-      overflow: hidden;
-      background: var(--ink-mid);
-      border: 1px solid rgba(255,255,255,0.06);
+      min-height: 340px;
     }
 
-    .faoud-img-secondary {
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      background: var(--ink-mid);
-      border: 1px solid rgba(255,255,255,0.06);
+    .tamaso-photo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, transparent 0 48%, rgba(212,149,106,0.12) 49% 50%, transparent 51%),
+        radial-gradient(circle at 78% 18%, rgba(184,115,51,0.22), transparent 34%),
+        linear-gradient(145deg, #302c28, #1d1a18);
+      z-index: -1;
     }
 
-    .faoud-img-primary img,
-    .faoud-img-secondary img {
-      width: 100%;
-      height: 100%;
+    .tamaso-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(12,11,10,0.78), transparent 60%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .tamaso-photo img {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
       object-fit: cover;
-      transition: transform 0.6s ease;
-      filter: brightness(0.9);
+      filter: saturate(0.78) brightness(0.86);
     }
 
-    .faoud-img-primary:hover img,
-    .faoud-img-secondary:hover img { transform: scale(1.03); }
+    .tamaso-photo-step {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--copper-light);
+      z-index: 1;
+    }
 
-    .faoud-content { padding-top: 10px; }
+    .tamaso-photo-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      z-index: 1;
+    }
 
-    .faoud-what {
+    .tamaso-photo-label strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.35rem, 2.4vw, 2rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--white);
+    }
+
+    .tamaso-photo-label span {
+      flex: 0 0 auto;
+      padding: 5px 10px;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--warm-gray-light);
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .tamaso-content { padding-top: 10px; }
+
+    .tamaso-what {
       font-size: 0.65rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -529,7 +584,7 @@
       margin-bottom: 14px;
     }
 
-    .faoud-desc {
+    .tamaso-desc {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.5rem;
       font-weight: 300;
@@ -538,21 +593,21 @@
       margin-bottom: 28px;
     }
 
-    .faoud-body {
+    .tamaso-body {
       font-size: 0.93rem;
       color: var(--warm-gray-light);
       line-height: 1.85;
       margin-bottom: 20px;
     }
 
-    .faoud-built {
+    .tamaso-flow {
       margin: 0 0 28px;
       padding: 18px 20px;
       border-left: 2px solid var(--copper);
       background: rgba(255,255,255,0.03);
     }
 
-    .faoud-built-title {
+    .tamaso-flow-title {
       font-size: 0.7rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -561,54 +616,124 @@
       font-weight: 500;
     }
 
-    .faoud-built-list {
+    .tamaso-flow-list {
       margin: 0;
-      padding-left: 18px;
+      padding: 0;
       display: grid;
-      gap: 8px;
+      gap: 0;
+      list-style: none;
     }
 
-    .faoud-built-list li {
+    .tamaso-flow-list li {
       font-size: 0.9rem;
       color: var(--warm-gray-light);
       line-height: 1.7;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
-    .faoud-built-note {
+    .tamaso-shift {
       margin-top: 12px;
+      font-family: 'Instrument Serif', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--copper-light);
+    }
+
+    .tamaso-vision {
+      margin-top: 54px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      color: var(--warm-gray-light);
       font-size: 0.86rem;
-      color: var(--copper-light);
     }
 
-    .faoud-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: rgba(255,255,255,0.07);
-      margin-top: 40px;
-    }
-
-    .faoud-stat {
-      background: rgba(255,255,255,0.03);
-      padding: 24px 20px;
-      text-align: center;
-    }
-
-    .faoud-stat-num {
+    .tamaso-vision strong {
+      max-width: 680px;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.4rem;
+      font-size: 1.35rem;
       font-weight: 300;
-      color: var(--copper-light);
-      line-height: 1;
-      display: block;
-      margin-bottom: 6px;
+      line-height: 1.45;
+      color: var(--cream);
     }
 
-    .faoud-stat-label {
-      font-size: 0.66rem;
+    /* =============================================
+       FAOUD, EARLIER CHAPTER
+    ============================================= */
+    #faoud {
+      padding: var(--section-pad) 0;
+      background: var(--cream-dark);
+    }
+
+    .faoud-header {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: end;
+      margin-bottom: 48px;
+    }
+
+    .faoud-title {
+      margin-top: 14px;
+      font-size: clamp(3rem, 6vw, 6rem);
+      line-height: 0.95;
+    }
+
+    .faoud-copy {
+      max-width: 610px;
+      color: var(--warm-gray);
+      font-size: 0.98rem;
+      line-height: 1.85;
+    }
+
+    .faoud-copy p + p { margin-top: 16px; }
+
+    .faoud-gallery {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    .faoud-frame {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background: var(--ink-mid);
+    }
+
+    .faoud-frame:first-child { aspect-ratio: auto; }
+
+    .faoud-frame img {
+      transition: transform 0.5s ease;
+      filter: saturate(0.78) brightness(0.88);
+    }
+
+    .faoud-frame:hover img { transform: scale(1.025); }
+
+    .faoud-caption {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 42px 18px 16px;
+      background: linear-gradient(to top, rgba(0,0,0,0.72), transparent);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.62rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--warm-gray-light);
+    }
+
+    .faoud-link {
+      display: inline-block;
+      margin-top: 22px;
+      color: var(--copper);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
     }
 
     /* =============================================
@@ -1341,6 +1466,9 @@
       }
       .film-block-main { grid-row: auto; aspect-ratio: 16/9; }
       .hilti-layout { grid-template-columns: 1fr; gap: 50px; }
+      .faoud-header { grid-template-columns: 1fr; gap: 28px; }
+      .faoud-gallery { grid-template-columns: 1fr 1fr; }
+      .faoud-frame:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
       .hilti-left { position: static; }
       .footer-inner { grid-template-columns: 1fr 1fr; }
     }
@@ -1361,9 +1489,9 @@
       .hero-right::after { background: linear-gradient(to top, rgba(22,20,18,0.9), transparent 60%); }
 
       .origin-text { grid-template-columns: 1fr; }
-      .grid-2, .aph-grid, .argame-inner, .faoud-main, .iitb-header { grid-template-columns: 1fr; gap: 40px; }
-      .faoud-images { grid-template-columns: 1fr; }
-      .faoud-img-primary { grid-column: auto; }
+      .grid-2, .aph-grid, .argame-inner, .tamaso-main, .iitb-header { grid-template-columns: 1fr; gap: 40px; }
+      .tamaso-story { grid-template-columns: 1fr; }
+      .tamaso-photo:nth-child(1), .tamaso-photo:nth-child(4) { grid-column: auto; min-height: 280px; }
       .films-text { grid-template-columns: 1fr; }
       .origin-grid { grid-template-columns: repeat(2, 1fr); }
       .project-cards { grid-template-columns: 1fr; }
@@ -1371,7 +1499,9 @@
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .nav-links { display: none; }
-      .faoud-stats { grid-template-columns: 1fr 1fr; }
+      .tamaso-vision { flex-direction: column; }
+      .faoud-gallery { grid-template-columns: 1fr; }
+      .faoud-frame:first-child { grid-column: auto; aspect-ratio: 4 / 3; }
       .iitb-snapshots { grid-template-columns: 1fr; }
       .films-grid { grid-template-columns: 1fr; }
       .film-block-main { aspect-ratio: 16/9; }
@@ -1379,7 +1509,7 @@
 
     @media (max-width: 480px) {
       .ach-grid { grid-template-columns: 1fr; }
-      .faoud-stats { grid-template-columns: 1fr; }
+      .tamaso-photo { min-height: 240px; }
     }
   </style>
 </head>
@@ -1391,6 +1521,7 @@
   <nav>
     <span class="nav-logo">Harsh Jha</span>
     <ul class="nav-links">
+      <li><a href="#tamaso">Tamaso</a></li>
       <li><a href="#faoud">Faoud</a></li>
       <li><a href="#iitb">Building</a></li>
       <li><a href="#films">Films</a></li>
@@ -1412,9 +1543,9 @@
         <em>real world.</em><br />
       </h1>
       <p class="hero-sub">
-        Across manufacturing, software, industrial systems, and the stories that tie them together.
+        Building Tamaso, an intelligence layer that helps people understand and act on the data their physical operations already create.
       </p>
-      <p class="hero-place">From Purnea to IIT Bombay — building the future of manufacturing.</p>
+      <p class="hero-place">From Purnea to IIT Bombay, building the future of manufacturing.</p>
       <div class="hero-ctas">
         <a href="#timeline" class="btn-primary">View Journey</a>
         <a href="#closing" class="btn-ghost">Get in Touch</a>
@@ -1436,6 +1567,83 @@
   </section>
 
   <!-- ============================================
+       TAMASO, FEATURED SECTION
+  ============================================= -->
+  <section id="tamaso">
+    <div class="container tamaso-inner">
+      <div class="tamaso-top">
+        <div>
+          <p class="tamaso-eyebrow">Now Building</p>
+          <h2 class="tamaso-headline">
+            Tamaso.<br />
+            <em>Intelligence for<br />the physical world.</em>
+          </h2>
+        </div>
+        <div class="tamaso-tagline-block">
+          <p class="tamaso-tagline">
+            We are going to factories, listening to the people inside them, and learning how deeptech can help MSMEs see and act on what their operations already know.
+          </p>
+          <span class="tamaso-role-pill">Fieldwork → Intelligence</span>
+        </div>
+      </div>
+
+      <div class="tamaso-main">
+        <div class="tamaso-story" aria-label="Tamaso fieldwork photo story">
+          <div class="tamaso-photo">
+            <img src="assets/tamaso/2_Infinix.jpeg" alt="Conversation with an MSME stakeholder" />
+            <span class="tamaso-photo-step">01 · Listen</span>
+            <div class="tamaso-photo-label"><strong>With the people<br />who run the floor</strong><span>Stakeholder conversation</span></div>
+          </div>
+          <div class="tamaso-photo">
+            <img src="assets/tamaso/1_Infinix.jpeg" alt="First factory visit" />
+            <span class="tamaso-photo-step">02 · Observe</span>
+            <div class="tamaso-photo-label"><strong>Factory visit<br />one</strong><span>Field photograph</span></div>
+          </div>
+          <div class="tamaso-photo">
+            <img src="assets/tamaso/2_Mypol.jpg" alt="Second factory visit" />
+            <span class="tamaso-photo-step">03 · Map</span>
+            <div class="tamaso-photo-label"><strong>Factory visit<br />two</strong><span>Field photograph</span></div>
+          </div>
+          <div class="tamaso-photo">
+            <img src="assets/tamaso/1_Mypol.jpeg" alt="Working session with factory stakeholders" />
+            <span class="tamaso-photo-step">04 · Build together</span>
+            <div class="tamaso-photo-label"><strong>Turning lived experience<br />into useful intelligence</strong><span>Working session</span></div>
+          </div>
+        </div>
+
+        <div class="tamaso-content">
+          <p class="tamaso-what">The Idea</p>
+          <p class="tamaso-desc">
+            Tamaso brings fragmented operational data into one contextual model, a living map of how an organisation actually works.
+          </p>
+          <div class="tamaso-flow">
+            <p class="tamaso-flow-title">From raw operations to action</p>
+            <ol class="tamaso-flow-list">
+              <li>01&nbsp;&nbsp; Connect scattered systems and processes</li>
+              <li>02&nbsp;&nbsp; Structure them into a unified operational model</li>
+              <li>03&nbsp;&nbsp; Visualise the organisation as a digital twin</li>
+              <li>04&nbsp;&nbsp; Understand patterns through analytics and AI</li>
+              <li>05&nbsp;&nbsp; Act on problems, predictions, and opportunities</li>
+            </ol>
+            <p class="tamaso-shift">Data economy → Insight economy</p>
+          </div>
+          <p class="tamaso-body">
+            The work begins on the ground: understanding what managers and operators need, how information moves, and where it disappears between ERPs, spreadsheets, machines, sensors, and manual processes.
+          </p>
+          <p class="tamaso-body">
+            The ambition is simple: help ordinary people use deep technology to do extraordinary things.
+          </p>
+        </div>
+      </div>
+
+      <div class="tamaso-vision">
+        <span class="tamaso-eyebrow">Beyond Manufacturing</span>
+        <strong>The same intelligence infrastructure can eventually help make sense of healthcare, governance, infrastructure, and other complex organisations.</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        ORIGIN SECTION
   ============================================= -->
   <section id="origin">
@@ -1444,7 +1652,7 @@
         <p class="eyebrow">The Beginning</p>
         <h2 class="origin-title">A story that started in<br /><em>Purnea, Bihar, India.</em></h2>
         <p class="origin-intro">
-          Not every founder's journey begins in a city with a startup ecosystem. Sometimes it begins in a quiet town — with curiosity, ambition, and the feeling that the world is larger than what surrounds you.
+          Not every founder's journey begins in a city with a startup ecosystem. Sometimes it begins in a quiet town, with curiosity, ambition, and the feeling that the world is larger than what surrounds you.
         </p>
       </div>
 
@@ -1463,8 +1671,8 @@
           <div class="origin-img-caption">Switzerland</div>
         </div>
         <div class="origin-img-block">
-          <img src="assets/portfolio/avery_faoud.png" alt="Faoud / Avery Dennison" loading="lazy" decoding="async" />
-          <div class="origin-img-caption">Faoud — Built Here</div>
+          <img src="assets/portfolio/devcom.jpg" alt="Building with the developer community at IIT Bombay" loading="lazy" decoding="async" />
+          <div class="origin-img-caption">Learning to Build</div>
         </div>
       </div>
 
@@ -1477,105 +1685,54 @@
         </div>
         <div class="origin-body">
           <p>
-            Growing up in Purnea, Bihar, ambition had to be self-generated. There was no startup culture, no network of mentors, no visible path. But there was a particular kind of drive that small towns give you — the one that asks what's possible beyond the horizon.
+            Growing up in Purnea, Bihar, ambition had to be self-generated. There was no startup culture, no network of mentors, no visible path. But there was a particular kind of drive that small towns give you, the one that asks what's possible beyond the horizon.
           </p>
           <p>
-            That drive carried me to IIT Bombay, where I didn't just study — I built. Products used by thousands. Communities that shaped campus life. Systems that outlasted my time there. And then to Hilti Group, where I touched something different: the intersection of industrial hardware, large-scale software, and real-world manufacturing.
+            That drive carried me to IIT Bombay, where I didn't just study, I built. Products used by thousands. Communities that shaped campus life. Systems that outlasted my time there. And then to Hilti Group, where I touched something different: the intersection of industrial hardware, large-scale software, and real-world manufacturing.
           </p>
           <p>
-            Now, all of it is channelled into <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — a startup that I believe is the most important thing I've worked on.
+            Now, all of it is channelled into Tamaso, an intelligence layer for the physical world, starting with the people and factories that power India's manufacturing economy.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="container"><div class="section-divider"></div></div>
-
   <!-- ============================================
-       FAOUD — FEATURED SECTION
+       FAOUD, EARLIER CHAPTER
   ============================================= -->
   <section id="faoud">
-    <div class="container faoud-inner">
-
-      <div class="faoud-top">
-        <div class="faoud-title-block">
-          <p class="faoud-eyebrow">Co-Founder</p>
-          <h2 class="faoud-headline">
-            Faoud - 
-            <em>Fa</em>ctory on
-            Cl<em>oud</em>.
-          </h2>
+    <div class="container">
+      <div class="faoud-header">
+        <div>
+          <p class="eyebrow">Earlier Chapter · Co-Founder</p>
+          <h2 class="faoud-title">Faoud,<br /><em>Factory on Cloud.</em></h2>
         </div>
-        <div class="faoud-tagline-block">
-          <p class="faoud-tagline">
-            Manufacturing has been running on gut, spreadsheets, and institutional memory for decades. <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is changing that.
+        <div class="faoud-copy">
+          <p>
+            Before Tamaso, I co-founded Faoud to bring greater visibility and structure to Indian manufacturing. We built workflows for factory discovery, bid comparison, production tracking, quality control, and execution.
           </p>
-          <span class="faoud-role-pill">Founder &amp; Builder</span>
+          <p>
+            Working closely with factories made one thing clear: organisations do not only need more software. They need an intelligence system that understands how their data, people, machines, and processes fit together. That learning became part of the foundation for Tamaso.
+          </p>
+          <a class="faoud-link" href="https://faoud.com" target="_blank" rel="noopener noreferrer">Visit Faoud →</a>
         </div>
       </div>
 
-      <div class="faoud-main">
-        <!-- Faoud images -->
-        <div class="faoud-images">
-          <div class="faoud-img-primary">
-            <img src="assets/portfolio/faoud_dashboard.png" alt="Faoud Dashboard" loading="lazy" decoding="async" />
-          </div>
-          <div class="faoud-img-secondary">
-            <img src="assets/portfolio/archi_faoud.png" alt="Faoud Architecture" loading="lazy" decoding="async" />
-          </div>
-          <div class="faoud-img-secondary">
-            <img src="assets/portfolio/avery_faoud.png" alt="Faoud Presentation" loading="lazy" decoding="async" />
-          </div>
+      <div class="faoud-gallery">
+        <div class="faoud-frame">
+          <img src="assets/portfolio/faoud_dashboard.png" alt="The Faoud manufacturing dashboard" loading="lazy" decoding="async" />
+          <span class="faoud-caption">Operational dashboard</span>
         </div>
-
-        <!-- Faoud text -->
-        <div class="faoud-content">
-          <p class="faoud-what">What It Is</p>
-          <p class="faoud-desc">
-            A manufacturing intelligence platform — built to bring clarity, traceability, and systems-thinking to factory floors.
-          </p>
-          <div class="faoud-built">
-            <p class="faoud-built-title">Built</p>
-            <ul class="faoud-built-list">
-              <li>requirement to factory discovery workflow</li>
-              <li>bid comparison system</li>
-              <li>quality and execution tracking logic</li>
-              <li>structured manufacturing data layer</li>
-            </ul>
-          </div>
-          <p class="faoud-body">
-            Manufacturing SMEs in India operate in opacity. Orders are tracked on WhatsApp. Quality decisions are made on instinct. Shop floors generate data that never becomes information. <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is infrastructure for this gap.
-          </p>
-          <p class="faoud-body">
-            We are building tools for production tracking, quality control, and operational visibility — designed to meet manufacturers where they are, not where software vendors wish they were.
-          </p>
-          <p class="faoud-body">
-            <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> is an initiative towards the future of Indian manufacturing that runs through better software, not just better hardware.
-          </p>
-          <p class="faoud-body">
-            <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Visit Faoud →</a>
-          </p>
+        <div class="faoud-frame">
+          <img src="assets/portfolio/archi_faoud.png" alt="Faoud system architecture" loading="lazy" decoding="async" />
+          <span class="faoud-caption">System architecture</span>
+        </div>
+        <div class="faoud-frame">
+          <img src="assets/portfolio/avery_faoud.png" alt="Faoud presentation at Avery Dennison" loading="lazy" decoding="async" />
+          <span class="faoud-caption">Avery Dennison ecosystem</span>
         </div>
       </div>
-
-      <!-- Stats bar -->
-      <div class="faoud-stats">
-        <div class="faoud-stat">
-          <span class="faoud-stat-num">180+</span>
-          <span class="faoud-stat-label">Factories Onboarded</span>
-        </div>
-        <div class="faoud-stat">
-          <span class="faoud-stat-num">25+</span>
-          <span class="faoud-stat-label">Brands on Platform</span>
-        </div>
-        <div class="faoud-stat">
-          <span class="faoud-stat-num">2 Done</span>
-          <span class="faoud-stat-label">9 in Pipeline under Observation</span>
-          <span class="faoud-stat-label">Pilot Orders for Validation</span>
-        </div>
-      </div>
-
     </div>
   </section>
 
@@ -1593,10 +1750,10 @@
             meets the cloud.
           </h2>
           <p class="hilti-intro">
-            At Hilti Group, I worked on modeling software used in large-scale MEP and structural applications — touching systems that operate at the intersection of 3D modeling, industrial hardware, and real construction environments.
+            At Hilti Group, I worked on modeling software used in large-scale MEP and structural applications, touching systems that operate at the intersection of 3D modeling, industrial hardware, and real construction environments.
           </p>
           <p class="hilti-intro">
-            An observation visit to Switzerland — including the Lonza facility — grounded this work in physical reality. It changed how I think about software.
+            An observation visit to Switzerland, including the Lonza facility, grounded this work in physical reality. It changed how I think about software.
           </p>
           <!-- Switzerland image -->
           <div class="hilti-img">
@@ -1620,7 +1777,7 @@
           <div class="tech-card">
             <p class="tech-card-eyebrow">Platform Integrations</p>
             <h3>BIM Ecosystem</h3>
-            <p>Worked with integrations across Navisworks, Revit, and RSTAB — understanding how construction data flows through digital modeling environments and where software augments physical installation.</p>
+            <p>Worked with integrations across Navisworks, Revit, and RSTAB, understanding how construction data flows through digital modeling environments and where software augments physical installation.</p>
             <div class="tech-tags">
               <span class="tech-tag">Navisworks</span>
               <span class="tech-tag">Revit</span>
@@ -1632,7 +1789,7 @@
           <div class="tech-card">
             <p class="tech-card-eyebrow">Team MEP</p>
             <h3>Collaborative Engineering</h3>
-            <p>Part of Team MEP — a cross-functional group focused on mechanical, electrical, and plumbing systems software. Experienced agile collaboration across global engineering teams.</p>
+            <p>Part of Team MEP, a cross-functional group focused on mechanical, electrical, and plumbing systems software. Experienced agile collaboration across global engineering teams.</p>
             <div class="tech-tags">
               <span class="tech-tag">Hilti Group</span>
               <span class="tech-tag">MEP Systems</span>
@@ -1643,7 +1800,7 @@
           <div class="tech-card">
             <p class="tech-card-eyebrow">Switzerland Exposure</p>
             <h3>From Code to Construction</h3>
-            <p>Visited Lonza facility in Switzerland — observing how software-designed systems translate to hardware installations in large industrial environments. This grounded my understanding of software's physical stakes.</p>
+            <p>Visited the Lonza facility in Switzerland, observing how software-designed systems translate to hardware installations in large industrial environments. This grounded my understanding of software's physical stakes.</p>
             <div class="tech-tags">
               <span class="tech-tag">Industrial Applications</span>
               <span class="tech-tag">Hardware Fitting</span>
@@ -1656,13 +1813,13 @@
   </section>
 
   <!-- ============================================
-       IIT BOMBAY — BUILDER SECTION
+       IIT BOMBAY, BUILDER SECTION
   ============================================= -->
   <section id="iitb">
     <div class="container">
       <div class="iitb-header">
         <div>
-          <p class="eyebrow">IIT Bombay — Builder Years</p>
+          <p class="eyebrow">IIT Bombay, Builder Years</p>
           <h2 class="iitb-title">
             Products built<br />
             for real<br />
@@ -1670,7 +1827,7 @@
           </h2>
         </div>
         <p class="iitb-desc">
-          At IIT Bombay, I didn't wait for a startup — I built one within the campus itself. Products that touched thousands of students. Communities that reshaped how people talked to each other. Systems that had to work at scale, from day one.
+          At IIT Bombay, I didn't wait for a startup, I built one within the campus itself. Products that touched thousands of students. Communities that reshaped how people talked to each other. Systems that had to work at scale, from day one.
         </p>
       </div>
 
@@ -1682,7 +1839,7 @@
       <div class="iitb-snapshots">
         <div class="iitb-snapshot">
           <img src="assets/portfolio/devcom.jpg" alt="DevCom IIT Bombay" loading="lazy" decoding="async" />
-          <div class="iitb-snapshot-caption">DevCom — Builder Community</div>
+          <div class="iitb-snapshot-caption">DevCom, Builder Community</div>
         </div>
         <div class="iitb-snapshot">
           <img src="assets/portfolio/travel.png" alt="IIT Bombay Campus Journey" loading="lazy" decoding="async" />
@@ -1696,7 +1853,7 @@
           <span class="project-card-number">01</span>
           <p class="project-card-eyebrow">Campus Platform</p>
           <h3><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a></h3>
-          <p>Contributed to <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — the central campus application for events, academics, and student life at IIT Bombay. Built features that shaped daily campus interaction.</p>
+          <p>Contributed to <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a>, the central campus application for events, academics, and student life at IIT Bombay. Built features that shaped daily campus interaction.</p>
           <p class="project-card-impact">20,000+ Downloads</p>
         </div>
 
@@ -1704,7 +1861,7 @@
           <span class="project-card-number">02</span>
           <p class="project-card-eyebrow">Community Layer</p>
           <h3>Conversations Feature</h3>
-          <p>Designed and built a community conversations feature within <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — covering local politics, buy/sell, and student interaction. Essentially a campus social layer.</p>
+          <p>Designed and built a community conversations feature within <a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a>, covering local politics, buy/sell, and student interaction. Essentially a campus social layer.</p>
           <p class="project-card-impact">Active Campus-wide Adoption</p>
         </div>
 
@@ -1712,15 +1869,15 @@
           <span class="project-card-number">03</span>
           <p class="project-card-eyebrow">Infrastructure</p>
           <h3>Mess-I</h3>
-          <p>Built systems for campus mess operations — inventory, feedback, and operational tooling for student dining infrastructure at scale.</p>
+          <p>Built systems for campus mess operations, including inventory, feedback, and operational tooling for student dining infrastructure at scale.</p>
           <p class="project-card-impact">Campus Mess Operations</p>
         </div>
 
         <div class="project-card">
           <span class="project-card-number">04</span>
           <p class="project-card-eyebrow">Onboarding</p>
-          <h3>NewBiew — Induction Portal</h3>
-          <p>Contributed to NewBiew, the induction portal for incoming students — a welcoming system that shaped the first experience of thousands of new IITians.</p>
+          <h3>NewBee, Induction Portal</h3>
+          <p>Contributed to NewBee, the induction portal for incoming students, a welcoming system that shaped the first experience of thousands of new IITians.</p>
           <p class="project-card-impact">All New Students, Every Year</p>
         </div>
 
@@ -1728,15 +1885,15 @@
           <span class="project-card-number">05</span>
           <p class="project-card-eyebrow">Developer Community</p>
           <h3>DevCom</h3>
-          <p>Active contributor to DevCom — IIT Bombay's developer community. Participated in building the culture of technical building and open-source contribution on campus.</p>
+          <p>Active contributor to DevCom, IIT Bombay's developer community. Participated in building the culture of technical building and open-source contribution on campus.</p>
           <p class="project-card-impact">Developer Ecosystem</p>
         </div>
 
         <div class="project-card">
           <span class="project-card-number">06</span>
           <p class="project-card-eyebrow">Creative Technology</p>
-          <h3>AR Game — Computer Vision</h3>
-          <p>Built an AR game integrating computer vision with a physical toy car — blending hardware and software interaction into a cohesive game world. Not just code, but world-building.</p>
+          <h3>AR Game, Computer Vision</h3>
+          <p>Built an AR game integrating computer vision with a physical toy car, blending hardware and software interaction into a cohesive game world. Not just code, but world-building.</p>
           <p class="project-card-impact">Hardware + Software Integration</p>
         </div>
       </div>
@@ -1744,7 +1901,7 @@
   </section>
 
   <!-- ============================================
-       A PH SCALE — AGENCY SECTION
+       A PH SCALE, AGENCY SECTION
   ============================================= -->
   <section id="aphscale">
     <div class="container">
@@ -1752,17 +1909,17 @@
         <div>
           <p class="eyebrow" style="color: var(--copper-light);">Entrepreneurial Experiment</p>
           <h2 class="aph-title">
-            A pH Scale —<br />
+            A pH Scale,<br />
             the agency<br />
             that started<br />
             <em>everything.</em>
           </h2>
           <p class="aph-desc">
-            In my final year at IIT Bombay, I started A pH Scale — a marketing and storytelling agency bornstarted a small storytelling and marketing agency to understand how products communicate. Every brand has a story that hasn't been told well yet. We told it.
+            In my final year at IIT Bombay, I started A pH Scale, a small storytelling and marketing agency created to understand how products communicate. Every brand has a story that hasn't been told well yet. We told it.
           </p>
           <br />
           <p class="aph-desc">
-            It was an experiment in business, creativity, and execution — proof that a technical person can also understand what moves people. Design, writing, strategy — all of it, built from scratch.
+            It was an experiment in business, creativity, and execution, proof that a technical person can also understand what moves people. Design, writing, strategy, all of it built from scratch.
           </p>
         </div>
         <div class="aph-visual">
@@ -1819,11 +1976,11 @@
         </div>
         <div>
           <p class="films-body">
-            Filmmaking taught me what no engineering course could: how to shape attention, how to create meaning from sequence, and how to make someone care about something abstract. I won at Inter-IIT film competitions and received the Xiaomi Ad Award — recognition that storytelling, when done with precision, is indistinguishable from craft.
+            Filmmaking taught me what no engineering course could: how to shape attention, how to create meaning from sequence, and how to make someone care about something abstract. I won at Inter-IIT film competitions and received the Xiaomi Ad Award, recognition that storytelling, when done with precision, is indistinguishable from craft.
           </p>
           <br />
           <p class="films-body">
-            This isn't a hobby that runs parallel to my technical work. It is the lens through which I build products — with a sense of narrative, user experience as story, and interfaces as conversations.
+            This isn't a hobby that runs parallel to my technical work. It is the lens through which I build products, with a sense of narrative, user experience as story, and interfaces as conversations.
           </p>
         </div>
       </div>
@@ -1845,12 +2002,12 @@
         <div class="timeline-item">
           <p class="timeline-year">The Beginning</p>
           <h3>Purnea, Bihar</h3>
-          <p>Grew up in Purnea — a small city in Bihar where ambition had to be self-made. No startup culture, no visible shortcuts. Just curiosity and a drive to understand how the world worked, and how to build in it. Sold servives to build homepage to get funds for idea of edtech. It was named MagicalStud. My personal gmail today is <a href="mailto:harshatmagicalstud@gmail.com">harshatmagicalstud@gmail.com</a>.</p>
+          <p>Grew up in Purnea, a small city in Bihar where ambition had to be self-made. No startup culture, no visible shortcuts. Just curiosity and a drive to understand how the world worked, and how to build in it. Sold servives to build homepage to get funds for idea of edtech. It was named MagicalStud. My personal gmail today is <a href="mailto:harshatmagicalstud@gmail.com">harshatmagicalstud@gmail.com</a>.</p>
           <p>Got introduced to IITs by my guru in hometown, Batul Da Sir. He used to say</p>
           <div class="films-pull-white">
           "You should always try to observe<br />
-          <em>physics</em> —<br />
-          its not to learn, its to see."
+          <em>physics</em>,<br />
+          it's not to learn, it's to see."
           <span class="quote-attribution quote-attribution-light">Batul Da Sir</span>
         </div>
         </div>
@@ -1858,19 +2015,19 @@
         <div class="timeline-item">
           <p class="timeline-year">Entrance &amp; Arrival</p>
           <h3>IIT Bombay</h3>
-          <p>Joined IIT Bombay for Chemical Engineering major, did minor in Computer Science — and immediately started building. The campus became a laboratory for products, communities, and creative work. A lot of things I know about building for users was shaped here.</p>
+          <p>Joined IIT Bombay for a Chemical Engineering major and a minor in Computer Science, and immediately started building. The campus became a laboratory for products, communities, and creative work. A lot of what I know about building for users was shaped here.</p>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Builder Years</p>
-          <h3><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> · DevCom · Mess-I · NewBiew</h3>
+          <h3><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> · DevCom · Mess-I · NewBee</h3>
           <p>Four years of shipping. Products used by 20,000+ students. Communities that shaped campus discourse. Systems that handled real-world constraints. Every project was a lesson in scope, scale, and speed.</p>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Creative Chapter</p>
           <h3>Films · A pH Scale · Xiaomi Award</h3>
-          <p>Ran a marketing agency, made films that won at Inter-IIT, won an ad award from Xiaomi. Discovered that building things and telling stories about them are not separate disciplines — they are the same skill, expressed differently.</p>
+          <p>Ran a marketing agency, made films that won at Inter-IIT, won an ad award from Xiaomi. Discovered that building things and telling stories about them are not separate disciplines, they are the same skill, expressed differently.</p>
         </div>
 
         <div class="timeline-item">
@@ -1881,14 +2038,20 @@
 
         <div class="timeline-item">
           <p class="timeline-year">Global Perspective</p>
-          <h3>Switzerland & France — Lonza &amp; Beyond</h3>
-          <p>Observation visit to Switzerland — including the Lonza facility. Saw how software-designed modular systems translate into physical hardware installations. The gap between digital model and factory floor became viscerally clear.</p>
+          <h3>Switzerland & France, Lonza &amp; Beyond</h3>
+          <p>Observation visit to Switzerland, including the Lonza facility. Saw how software-designed modular systems translate into physical hardware installations. The gap between digital model and factory floor became viscerally clear.</p>
+        </div>
+
+        <div class="timeline-item">
+          <p class="timeline-year">Building in Manufacturing</p>
+          <h3><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a>, Factory on Cloud</h3>
+          <p>Co-founded Faoud and built manufacturing workflows for factory discovery, bid comparison, production visibility, quality, and execution. The experience revealed the deeper need for a connected intelligence layer across physical operations.</p>
         </div>
 
         <div class="timeline-item">
           <p class="timeline-year">Now</p>
-          <h3><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — Factory on Cloud</h3>
-          <p>Building <a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a>: a manufacturing intelligence platform for India's factory floors. Every experience — technical, creative, industrial — flows into this. This is the work that matters most.</p>
+          <h3>Tamaso, Intelligence for the Physical World</h3>
+          <p>Going into factories to understand how work really happens, then building the operational maps, digital twins, and intelligence tools that can help India's MSMEs make better decisions. Every technical, creative, and industrial experience flows into this work.</p>
         </div>
       </div>
     </div>
@@ -1902,8 +2065,8 @@
       <div class="achievements-header">
         <p class="eyebrow">Recognition</p>
         <h2 class="achievements-title">
-          Built and<br />
-          recognized for it.
+          Built, learned,<br />
+          and recognized.
         </h2>
       </div>
 
@@ -1911,42 +2074,42 @@
         <div class="ach-item">
           <p class="ach-num">01</p>
           <p class="ach-title">Inter-IIT Film Winner</p>
-          <p class="ach-desc">Won at the Inter-IIT cultural competition for film — competing across top technical institutes in India.</p>
+          <p class="ach-desc">Won at the Inter-IIT cultural competition for film, competing across top technical institutes in India.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">02</p>
           <p class="ach-title">Xiaomi Ad Award</p>
-          <p class="ach-desc">Received a creative award from Xiaomi for advertising work — proof that technical minds can build compelling narratives.</p>
+          <p class="ach-desc">Received a creative award from Xiaomi for advertising work, proof that technical minds can build compelling narratives.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">03</p>
-          <p class="ach-title"><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a> — 20K+ Users</p>
+          <p class="ach-title"><a href="https://insti.app" target="_blank" rel="noopener noreferrer">InstiApp</a>, 20K+ Users</p>
           <p class="ach-desc">Contributed to IIT Bombay's flagship student app, reaching over 20,000 downloads across the campus community.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">04</p>
-          <p class="ach-title">Hilti Group — Industrial Software</p>
-          <p class="ach-desc">Worked on Hilti's global modeling software — contributing to systems used in large-scale MEP and structural projects worldwide.</p>
+          <p class="ach-title">Hilti Group, Industrial Software</p>
+          <p class="ach-desc">Worked on Hilti's global modeling software, contributing to systems used in large-scale MEP and structural projects worldwide.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">05</p>
-          <p class="ach-title"><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> — Avery Dennison Recognition</p>
-          <p class="ach-desc"><a href="https://faoud.com" target="_blank" rel="noopener noreferrer">Faoud</a> presented and recognized at the Avery Dennison ecosystem — validating its approach to manufacturing software.</p>
+          <p class="ach-title">Faoud, Avery Dennison Recognition</p>
+          <p class="ach-desc">Faoud was presented and recognised in the Avery Dennison ecosystem, validating its approach to manufacturing software.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">06</p>
           <p class="ach-title">Switzerland Industrial Visit</p>
-          <p class="ach-desc">Selected for an observation visit to Lonza, Switzerland — gaining firsthand understanding of industrial hardware systems and their software backbone.</p>
+          <p class="ach-desc">Selected for an observation visit to Lonza, Switzerland, gaining firsthand understanding of industrial hardware systems and their software backbone.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">07</p>
-          <p class="ach-title">IIT Bombay, Chemical Engineering — Computer Science Minor</p>
-          <p class="ach-desc">Graduate of IIT Bombay — one of India's most competitive technical institutions — in Computer Science Engineering.</p>
+          <p class="ach-title">IIT Bombay, Chemical Engineering, Computer Science Minor</p>
+          <p class="ach-desc">Graduate of IIT Bombay, one of India's most competitive technical institutions, with a major in Chemical Engineering and a minor in Computer Science.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">08</p>
-          <p class="ach-title">A pH Scale — Founder</p>
-          <p class="ach-desc">Founded and ran a creative marketing agency from campus — proving that technical builders can also think in brand, story, and market.</p>
+          <p class="ach-title">A pH Scale, Founder</p>
+          <p class="ach-desc">Founded and ran a creative marketing agency from campus, proving that technical builders can also think in brand, story, and market.</p>
         </div>
       </div>
     </div>
@@ -1960,14 +2123,14 @@
       <p class="closing-eyebrow">A Parting Thought</p>
       <h2 class="closing-statement">
         The best systems are built by people who remember<br />
-        <em>where they came from</em> — and refuse<br />
+        <em>where they came from</em>, and refuse<br />
         to be limited by it.
       </h2>
       <p class="closing-sub">
-        I came from Purnea. I build for the world. Everything between those two facts is the story I'm still writing — one system, one product, one factory at a time.
+        I came from Purnea. I build for the world. Everything between those two facts is the story I'm still writing, one system, one product, one factory at a time.
       </p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
-        <a href="mailto:jha@faoud.com" class="btn-primary">Get in Touch</a>
+        <a href="mailto:harshatmagicalstud@gmail.com" class="btn-primary">Get in Touch</a>
         <a href="#timeline" class="btn-ghost">Read the Journey</a>
       </div>
     </div>
@@ -1988,12 +2151,12 @@
         </div>
         <div>
           <p class="footer-col-title">Connect</p>
-          <a href="mailto:jha@faoud.com" class="footer-link">jha@faoud.com</a>
           <a href="mailto:harshatmagicalstud@gmail.com" class="footer-link">harshatmagicalstud@gmail.com</a>
           <a href="tel:+916201001984" class="footer-link">+916201001984</a>
         </div>
         <div>
           <p class="footer-col-title">Work</p>
+          <a href="#tamaso" class="footer-link">Tamaso</a>
           <a href="https://faoud.com" class="footer-link" target="_blank" rel="noopener noreferrer">faoud.com</a>
           <a href="https://insti.app" class="footer-link" target="_blank" rel="noopener noreferrer">insti.app</a>
           <a href="#aphscale" class="footer-link">A pH Scale Ad Video</a>
@@ -2003,7 +2166,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p class="footer-copy">© 2025 Harsh Jha. All rights reserved.</p>
+        <p class="footer-copy">© 2026 Harsh Jha. All rights reserved.</p>
         <a href="#" class="btn-resume">Download Resume</a>
       </div>
     </div>
@@ -2026,7 +2189,7 @@
 
     // Apply to all major inner blocks
     document.querySelectorAll(
-      '.tech-card, .project-card, .ach-item, .timeline-item, .origin-img-block, .faoud-stat'
+      '.tech-card, .project-card, .ach-item, .timeline-item, .origin-img-block, .tamaso-photo'
     ).forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(22px)';

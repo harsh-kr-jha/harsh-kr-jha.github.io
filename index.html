@@ -195,13 +195,13 @@
     .btn-primary {
       display: inline-block;
       padding: 14px 36px;
-      background: var(--copper);
+      background: #895326;
       color: var(--white);
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      border: 1px solid var(--copper);
+      border: 1px solid #895326;
       transition: background 0.3s, color 0.3s;
     }
 
@@ -209,6 +209,8 @@
       background: transparent;
       color: var(--copper);
     }
+
+    #hero .btn-primary:hover, #closing .btn-primary:hover { color: var(--copper-light); }
 
     .btn-ghost {
       display: inline-block;
@@ -393,272 +395,70 @@
     }
 
     /* =============================================
-       TAMASO, FEATURED SECTION
+       HEADWIG / CURRENT WORK
     ============================================= */
-    #tamaso {
+    section[id] { scroll-margin-top: 90px; }
+    a:focus-visible { outline: 2px solid var(--copper-light); outline-offset: 6px; }
+
+    #headwig {
       background: var(--ink);
       color: var(--cream);
       padding: var(--section-pad) 0;
-      position: relative;
-      overflow: hidden;
+      border-top: 1px solid rgba(244,241,234,0.12);
     }
 
-    #tamaso::before {
-      content: 'TAMASO';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(120px, 18vw, 220px);
-      font-weight: 300;
-      color: rgba(255,255,255,0.02);
-      white-space: nowrap;
-      pointer-events: none;
-      user-select: none;
-      letter-spacing: 0.1em;
-    }
-
-    .tamaso-inner { position: relative; z-index: 2; }
-
-    .tamaso-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 70px;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-
-    .tamaso-eyebrow {
-      font-size: 0.65rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      margin-bottom: 20px;
-      font-weight: 500;
-    }
-
-    .tamaso-headline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.5rem, 7vw, 8rem);
-      font-weight: 300;
-      line-height: 0.95;
-      color: var(--white);
-    }
-
-    .tamaso-headline em {
-      font-style: italic;
-      color: var(--copper-light);
-    }
-
-    .tamaso-tagline-block {
-      max-width: 360px;
-      padding-top: 20px;
-    }
-
-    .tamaso-tagline {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 1.3rem;
-      color: var(--warm-gray-light);
-      line-height: 1.5;
-      margin-bottom: 20px;
-    }
-
-    .tamaso-role-pill {
-      display: inline-block;
-      padding: 6px 18px;
-      border: 1px solid var(--copper);
-      color: var(--copper);
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .tamaso-main {
+    .headwig-layout {
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
-      gap: 60px;
-      align-items: start;
-      margin-bottom: 60px;
+      gap: clamp(32px, 5vw, 72px);
+      align-items: center;
     }
 
-    .tamaso-story {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
+    .headwig-copy { min-width: 0; }
+    .headwig-copy .eyebrow { color: var(--copper-light); margin-bottom: 28px; }
+    .headwig-title {
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      margin-bottom: 32px;
     }
-
-    .tamaso-photo {
-      position: relative;
-      min-height: 250px;
-      overflow: hidden;
-      background: var(--ink-mid);
-      border: 1px solid rgba(255,255,255,0.06);
-      isolation: isolate;
-    }
-
-    .tamaso-photo:nth-child(1),
-    .tamaso-photo:nth-child(4) {
-      grid-column: 1 / -1;
-      min-height: 340px;
-    }
-
-    .tamaso-photo::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(135deg, transparent 0 48%, rgba(212,149,106,0.12) 49% 50%, transparent 51%),
-        radial-gradient(circle at 78% 18%, rgba(184,115,51,0.22), transparent 34%),
-        linear-gradient(145deg, #302c28, #1d1a18);
-      z-index: -1;
-    }
-
-    .tamaso-photo::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(12,11,10,0.78), transparent 60%);
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .tamaso-photo img {
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      object-fit: cover;
-      filter: saturate(0.78) brightness(0.86);
-    }
-
-    .tamaso-photo-step {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      font-size: 0.62rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      z-index: 1;
-    }
-
-    .tamaso-photo-label {
-      position: absolute;
-      left: 18px;
-      right: 18px;
-      bottom: 18px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 18px;
-      z-index: 1;
-    }
-
-    .tamaso-photo-label strong {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.35rem, 2.4vw, 2rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--white);
-    }
-
-    .tamaso-photo-label span {
-      flex: 0 0 auto;
-      padding: 5px 10px;
-      border: 1px solid rgba(255,255,255,0.2);
+    .headwig-title em { color: var(--copper-light); }
+    .headwig-story p {
       color: var(--warm-gray-light);
-      font-size: 0.58rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .tamaso-content { padding-top: 10px; }
-
-    .tamaso-what {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      margin-bottom: 14px;
-    }
-
-    .tamaso-desc {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
-      font-weight: 300;
-      line-height: 1.55;
-      color: var(--cream);
-      margin-bottom: 28px;
-    }
-
-    .tamaso-body {
-      font-size: 0.93rem;
-      color: var(--warm-gray-light);
+      font-size: 0.98rem;
       line-height: 1.85;
       margin-bottom: 20px;
     }
-
-    .tamaso-flow {
-      margin: 0 0 28px;
-      padding: 18px 20px;
-      border-left: 2px solid var(--copper);
-      background: rgba(255,255,255,0.03);
-    }
-
-    .tamaso-flow-title {
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--copper-light);
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .tamaso-flow-list {
-      margin: 0;
-      padding: 0;
-      display: grid;
-      gap: 0;
-      list-style: none;
-    }
-
-    .tamaso-flow-list li {
-      font-size: 0.9rem;
-      color: var(--warm-gray-light);
-      line-height: 1.7;
-      padding: 8px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-
-    .tamaso-shift {
-      margin-top: 12px;
-      font-family: 'Instrument Serif', serif;
+    .headwig-story p:last-child { margin-bottom: 0; }
+    .headwig-quote { margin: 0 0 28px; }
+    .headwig-quote blockquote {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: clamp(1.7rem, 2.8vw, 2.5rem);
       font-style: italic;
-      font-size: 1.1rem;
-      color: var(--copper-light);
-    }
-
-    .tamaso-vision {
-      margin-top: 54px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      display: flex;
-      justify-content: space-between;
-      gap: 30px;
-      color: var(--warm-gray-light);
-      font-size: 0.86rem;
-    }
-
-    .tamaso-vision strong {
-      max-width: 680px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.35rem;
-      font-weight: 300;
-      line-height: 1.45;
+      line-height: 1.35;
       color: var(--cream);
+      border-left: 1px solid var(--copper-light);
+      padding-left: 24px;
     }
+    .headwig-art { min-width: 0; }
+    .headwig-owl { display: block; width: 100%; height: auto; }
+
+    /* =============================================
+       TAMASO / EARLIER PROJECT
+    ============================================= */
+    #tamaso { padding: clamp(64px, 7vw, 96px) 0; background: var(--cream); }
+    .tamaso-main {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .tamaso-headline { font-size: clamp(2.5rem, 4vw, 3.5rem); margin: 14px 0 20px; }
+    .tamaso-body { color: #625D56; font-size: 0.95rem; line-height: 1.85; margin-bottom: 14px; }
+    .tamaso-body:last-child { margin-bottom: 0; }
+    .tamaso-content .eyebrow { color: #8B5427; }
+    .tamaso-story { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .tamaso-photo { min-width: 0; }
+    .tamaso-photo img { height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+    .tamaso-photo figcaption { color: #625D56; font-size: 0.7rem; padding-top: 10px; }
 
     /* =============================================
        FAOUD, EARLIER CHAPTER
@@ -1435,7 +1235,7 @@
     }
 
     .btn-resume:hover {
-      background: var(--copper);
+      background: #895326;
       color: var(--white);
     }
 
@@ -1452,6 +1252,14 @@
     .hero-sub   { animation: fadeUp 0.7s ease 0.55s both; }
     .hero-place { animation: fadeUp 0.7s ease 0.65s both; }
     .hero-ctas  { animation: fadeUp 0.7s ease 0.75s both; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
 
     /* =============================================
        RESPONSIVE
@@ -1490,8 +1298,9 @@
 
       .origin-text { grid-template-columns: 1fr; }
       .grid-2, .aph-grid, .argame-inner, .tamaso-main, .iitb-header { grid-template-columns: 1fr; gap: 40px; }
-      .tamaso-story { grid-template-columns: 1fr; }
-      .tamaso-photo:nth-child(1), .tamaso-photo:nth-child(4) { grid-column: auto; min-height: 280px; }
+      .tamaso-story { grid-template-columns: 1fr 1fr; }
+      .headwig-layout { grid-template-columns: 1fr; gap: 32px; }
+      .headwig-art { width: min(100%, 380px); margin: 0 auto; }
       .films-text { grid-template-columns: 1fr; }
       .origin-grid { grid-template-columns: repeat(2, 1fr); }
       .project-cards { grid-template-columns: 1fr; }
@@ -1499,7 +1308,6 @@
       .footer-inner { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
       .nav-links { display: none; }
-      .tamaso-vision { flex-direction: column; }
       .faoud-gallery { grid-template-columns: 1fr; }
       .faoud-frame:first-child { grid-column: auto; aspect-ratio: 4 / 3; }
       .iitb-snapshots { grid-template-columns: 1fr; }
@@ -1509,7 +1317,7 @@
 
     @media (max-width: 480px) {
       .ach-grid { grid-template-columns: 1fr; }
-      .tamaso-photo { min-height: 240px; }
+      .tamaso-main { gap: 28px; }
     }
   </style>
 </head>
@@ -1521,7 +1329,7 @@
   <nav>
     <span class="nav-logo">Harsh Jha</span>
     <ul class="nav-links">
-      <li><a href="#tamaso">Tamaso</a></li>
+      <li><a href="#headwig">Headwig</a></li>
       <li><a href="#faoud">Faoud</a></li>
       <li><a href="#iitb">Building</a></li>
       <li><a href="#films">Films</a></li>
@@ -1537,17 +1345,16 @@
     <div class="hero-left">
       <p class="hero-tag">Builder · Founder · Storyteller</p>
       <h1 class="hero-headline">
-        Building <br />
-        systems that operate<br />
-        in the<br />
-        <em>real world.</em><br />
+        The future of<br />
+        software is<br />
+        <em>engineering<br />the result.</em>
       </h1>
       <p class="hero-sub">
-        Building Tamaso, an intelligence layer that helps people understand and act on the data their physical operations already create.
+        I’ve been coding since eighth grade. Today, I’m a software engineer, exploring how we build when AI writes the code.
       </p>
-      <p class="hero-place">From Purnea to IIT Bombay, building the future of manufacturing.</p>
+      <p class="hero-place">From Purnea to IIT Bombay. Still asking what comes next.</p>
       <div class="hero-ctas">
-        <a href="#timeline" class="btn-primary">View Journey</a>
+        <a href="#headwig" class="btn-primary">What I’m building</a>
         <a href="#closing" class="btn-ghost">Get in Touch</a>
       </div>
     </div>
@@ -1567,79 +1374,49 @@
   </section>
 
   <!-- ============================================
-       TAMASO, FEATURED SECTION
+       HEADWIG / CURRENT WORK
   ============================================= -->
-  <section id="tamaso">
-    <div class="container tamaso-inner">
-      <div class="tamaso-top">
-        <div>
-          <p class="tamaso-eyebrow">Now Building</p>
-          <h2 class="tamaso-headline">
-            Tamaso.<br />
-            <em>Intelligence for<br />the physical world.</em>
-          </h2>
-        </div>
-        <div class="tamaso-tagline-block">
-          <p class="tamaso-tagline">
-            We are going to factories, listening to the people inside them, and learning how deeptech can help MSMEs see and act on what their operations already know.
-          </p>
-          <span class="tamaso-role-pill">Fieldwork → Intelligence</span>
+  <section id="headwig" aria-labelledby="headwig-title">
+    <div class="container headwig-layout">
+      <div class="headwig-copy">
+        <p class="eyebrow">Currently building · Headwig</p>
+        <h2 class="headwig-title" id="headwig-title">More time<br /><em>engineering the result.</em></h2>
+        <figure class="headwig-quote">
+          <blockquote>“If AI is writing the code, I want to spend my time validating the results.”</blockquote>
+        </figure>
+        <div class="headwig-story">
+          <p>I’ve been coding since eighth grade. Agents made me faster, but I was still stuck waiting, reviewing, and starting the next task. Conversations with 30 developers reinforced that bottleneck.</p>
+          <p>I’m building Headwig, an IDE built around validation: a place to evaluate results, compare approaches, and exercise judgment while agents work in parallel.</p>
         </div>
       </div>
-
-      <div class="tamaso-main">
-        <div class="tamaso-story" aria-label="Tamaso fieldwork photo story">
-          <div class="tamaso-photo">
-            <img src="assets/tamaso/2_Infinix.jpeg" alt="Conversation with an MSME stakeholder" />
-            <span class="tamaso-photo-step">01 · Listen</span>
-            <div class="tamaso-photo-label"><strong>With the people<br />who run the floor</strong><span>Stakeholder conversation</span></div>
-          </div>
-          <div class="tamaso-photo">
-            <img src="assets/tamaso/1_Infinix.jpeg" alt="First factory visit" />
-            <span class="tamaso-photo-step">02 · Observe</span>
-            <div class="tamaso-photo-label"><strong>Factory visit<br />one</strong><span>Field photograph</span></div>
-          </div>
-          <div class="tamaso-photo">
-            <img src="assets/tamaso/2_Mypol.jpg" alt="Second factory visit" />
-            <span class="tamaso-photo-step">03 · Map</span>
-            <div class="tamaso-photo-label"><strong>Factory visit<br />two</strong><span>Field photograph</span></div>
-          </div>
-          <div class="tamaso-photo">
-            <img src="assets/tamaso/1_Mypol.jpeg" alt="Working session with factory stakeholders" />
-            <span class="tamaso-photo-step">04 · Build together</span>
-            <div class="tamaso-photo-label"><strong>Turning lived experience<br />into useful intelligence</strong><span>Working session</span></div>
-          </div>
-        </div>
-
-        <div class="tamaso-content">
-          <p class="tamaso-what">The Idea</p>
-          <p class="tamaso-desc">
-            Tamaso brings fragmented operational data into one contextual model, a living map of how an organisation actually works.
-          </p>
-          <div class="tamaso-flow">
-            <p class="tamaso-flow-title">From raw operations to action</p>
-            <ol class="tamaso-flow-list">
-              <li>01&nbsp;&nbsp; Connect scattered systems and processes</li>
-              <li>02&nbsp;&nbsp; Structure them into a unified operational model</li>
-              <li>03&nbsp;&nbsp; Visualise the organisation as a digital twin</li>
-              <li>04&nbsp;&nbsp; Understand patterns through analytics and AI</li>
-              <li>05&nbsp;&nbsp; Act on problems, predictions, and opportunities</li>
-            </ol>
-            <p class="tamaso-shift">Data economy → Insight economy</p>
-          </div>
-          <p class="tamaso-body">
-            The work begins on the ground: understanding what managers and operators need, how information moves, and where it disappears between ERPs, spreadsheets, machines, sensors, and manual processes.
-          </p>
-          <p class="tamaso-body">
-            The ambition is simple: help ordinary people use deep technology to do extraordinary things.
-          </p>
-        </div>
-      </div>
-
-      <div class="tamaso-vision">
-        <span class="tamaso-eyebrow">Beyond Manufacturing</span>
-        <strong>The same intelligence infrastructure can eventually help make sense of healthcare, governance, infrastructure, and other complex organisations.</strong>
-      </div>
+      <figure class="headwig-art">
+        <svg class="headwig-owl" aria-hidden="true" viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <radialGradient id="owl-glow">
+              <stop stop-color="#B87333" stop-opacity="0.1" />
+              <stop offset="1" stop-color="#B87333" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <ellipse cx="240" cy="300" rx="235" ry="275" fill="url(#owl-glow)" />
+          <g stroke="#D4956A" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M57 224 A190 190 0 0 1 423 224 M70 182 A205 205 0 0 1 410 182" opacity="0.16" />
+            <path d="M240 462 C154 433 82 346 80 236 L80 116 L178 180 M240 462 C326 433 398 346 400 236 L400 116 L302 180" opacity="0.65" />
+            <path d="M80 116 C136 132 194 165 240 224 C286 165 344 132 400 116" />
+            <path d="M102 205 C142 170 208 179 240 224 C272 179 338 170 378 205" opacity="0.4" />
+            <path d="M240 224 C208 197 134 193 111 248 C91 297 135 346 185 329 C220 317 233 280 240 252 C247 280 260 317 295 329 C345 346 389 297 369 248 C346 193 272 197 240 224" />
+            <path d="M132 255 C147 224 191 225 209 254 C220 275 204 305 179 306 C151 307 123 281 132 255 M348 255 C333 224 289 225 271 254 C260 275 276 305 301 306 C329 307 357 281 348 255" opacity="0.55" />
+            <path d="M139 249 Q174 224 205 249 M275 249 Q306 224 341 249" opacity="0.75" />
+            <circle cx="175" cy="270" r="11" />
+            <circle cx="305" cy="270" r="11" />
+            <circle cx="175" cy="270" r="3" fill="#D4956A" stroke="none" />
+            <circle cx="305" cy="270" r="3" fill="#D4956A" stroke="none" />
+            <path d="M222 321 L240 351 L258 321 M240 351 L240 381" />
+            <path d="M116 346 C146 408 196 447 240 462 C284 447 334 408 364 346 M152 365 C173 401 207 425 240 437 C273 425 307 401 328 365" opacity="0.3" />
+            <path d="M240 90 L240 146 M240 498 L240 526 M32 265 L56 265 M424 265 L448 265" opacity="0.25" />
+            <circle cx="240" cy="562" r="3" fill="#D4956A" stroke="none" />
+          </g>
+        </svg>
+      </figure>
     </div>
   </section>
 
@@ -1691,7 +1468,7 @@
             That drive carried me to IIT Bombay, where I didn't just study, I built. Products used by thousands. Communities that shaped campus life. Systems that outlasted my time there. And then to Hilti Group, where I touched something different: the intersection of industrial hardware, large-scale software, and real-world manufacturing.
           </p>
           <p>
-            Now, all of it is channelled into Tamaso, an intelligence layer for the physical world, starting with the people and factories that power India's manufacturing economy.
+            Today, I’m building Headwig alongside my work at Hilti. Years of building software have led me to a new question: when AI writes the code, how should we spend our time engineering the result?
           </p>
         </div>
       </div>
@@ -1737,6 +1514,30 @@
   </section>
 
   <!-- ============================================
+       TAMASO / EARLIER PROJECT
+  ============================================= -->
+  <section id="tamaso" aria-labelledby="tamaso-title">
+    <div class="container tamaso-main">
+      <div class="tamaso-content">
+        <p class="eyebrow">Earlier project · Prototype work</p>
+        <h2 class="tamaso-headline" id="tamaso-title">Tamaso.</h2>
+        <p class="tamaso-body">Tamaso explored how fragmented operational data could become a contextual model of how an organisation worked, helping people understand their operations and make better decisions.</p>
+        <p class="tamaso-body">We visited factories, spoke with managers and operators, and mapped how information moved between people, machines, and existing systems. We designed prototypes for a mushroom factory and Mypol.</p>
+      </div>
+      <div class="tamaso-story">
+        <figure class="tamaso-photo">
+          <img src="assets/tamaso/2_Infinix.jpeg" alt="Conversation with an MSME stakeholder during Tamaso fieldwork" loading="lazy" decoding="async" />
+          <figcaption>Listening on the factory floor</figcaption>
+        </figure>
+        <figure class="tamaso-photo">
+          <img src="assets/tamaso/1_Mypol.jpeg" alt="Working session with factory stakeholders at Mypol" loading="lazy" decoding="async" />
+          <figcaption>Working together at Mypol</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
        HILTI / TECH SECTION
   ============================================= -->
   <section id="hilti">
@@ -1750,7 +1551,7 @@
             meets the cloud.
           </h2>
           <p class="hilti-intro">
-            At Hilti Group, I worked on modeling software used in large-scale MEP and structural applications, touching systems that operate at the intersection of 3D modeling, industrial hardware, and real construction environments.
+            At Hilti Group, I work as a software engineer on modeling software used in large-scale MEP and structural applications, touching systems that operate at the intersection of 3D modeling, industrial hardware, and real construction environments.
           </p>
           <p class="hilti-intro">
             An observation visit to Switzerland, including the Lonza facility, grounded this work in physical reality. It changed how I think about software.
@@ -2049,9 +1850,15 @@
         </div>
 
         <div class="timeline-item">
+          <p class="timeline-year">Prototype Work</p>
+          <h3>Tamaso</h3>
+          <p>Explored an intelligence layer for physical operations through factory visits and conversations with managers and operators. We designed prototypes for a mushroom factory and Mypol.</p>
+        </div>
+
+        <div class="timeline-item">
           <p class="timeline-year">Now</p>
-          <h3>Tamaso, Intelligence for the Physical World</h3>
-          <p>Going into factories to understand how work really happens, then building the operational maps, digital twins, and intelligence tools that can help India's MSMEs make better decisions. Every technical, creative, and industrial experience flows into this work.</p>
+          <h3>Headwig, Engineering the Result</h3>
+          <p>Building Headwig, an IDE built around validation, alongside my work at Hilti. I’m exploring how engineers can evaluate results and compare approaches while agents work in parallel.</p>
         </div>
       </div>
     </div>
@@ -2089,7 +1896,7 @@
         <div class="ach-item">
           <p class="ach-num">04</p>
           <p class="ach-title">Hilti Group, Industrial Software</p>
-          <p class="ach-desc">Worked on Hilti's global modeling software, contributing to systems used in large-scale MEP and structural projects worldwide.</p>
+          <p class="ach-desc">Work on Hilti’s global modeling software, contributing to systems used in large-scale MEP and structural projects worldwide.</p>
         </div>
         <div class="ach-item">
           <p class="ach-num">05</p>
@@ -2127,7 +1934,7 @@
         to be limited by it.
       </h2>
       <p class="closing-sub">
-        I came from Purnea. I build for the world. Everything between those two facts is the story I'm still writing, one system, one product, one factory at a time.
+        I came from Purnea. I build for the world. Everything between those two facts is the story I’m still writing. Today, I’m exploring how software engineers can turn the time AI saves into better results.
       </p>
       <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <a href="mailto:harshatmagicalstud@gmail.com" class="btn-primary">Get in Touch</a>
@@ -2156,7 +1963,8 @@
         </div>
         <div>
           <p class="footer-col-title">Work</p>
-          <a href="#tamaso" class="footer-link">Tamaso</a>
+          <a href="#headwig" class="footer-link">Headwig · Currently building</a>
+          <a href="#tamaso" class="footer-link">Tamaso · Prototype work</a>
           <a href="https://faoud.com" class="footer-link" target="_blank" rel="noopener noreferrer">faoud.com</a>
           <a href="https://insti.app" class="footer-link" target="_blank" rel="noopener noreferrer">insti.app</a>
           <a href="#aphscale" class="footer-link">A pH Scale Ad Video</a>

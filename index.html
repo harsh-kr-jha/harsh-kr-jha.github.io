@@ -129,7 +129,7 @@
     #hero {
       min-height: 100svh;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 0.8fr;
       background: var(--ink);
       color: var(--cream);
       position: relative;
@@ -139,51 +139,79 @@
     .hero-left {
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: clamp(100px, 12vw, 160px) clamp(30px, 5vw, 80px) clamp(60px, 8vw, 100px);
+      justify-content: center;
+      padding: clamp(100px, 8vw, 130px) clamp(30px, 5vw, 80px) clamp(90px, 11vw, 150px);
       position: relative;
       z-index: 2;
     }
 
     .hero-tag {
-      font-size: 0.65rem;
-      letter-spacing: 0.26em;
-      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: clamp(0.85rem, 1.2vw, 1rem);
+      letter-spacing: 0.03em;
       color: var(--copper-light);
-      margin-bottom: 28px;
-      font-weight: 500;
+      margin-bottom: 30px;
+      font-weight: 400;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--copper-light);
+      flex-shrink: 0;
     }
 
     .hero-headline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3.2rem, 6vw, 6.5rem);
       font-weight: 300;
-      line-height: 1.02;
       color: var(--white);
-      margin-bottom: 28px;
+      margin-bottom: 30px;
+    }
+
+    .hero-context {
+      display: block;
+      max-width: 480px;
+      font-size: clamp(1.8rem, 3vw, 2.7rem);
+      line-height: 1.15;
+      text-wrap: balance;
     }
 
     .hero-headline em {
+      display: block;
+      font-size: clamp(4.2rem, 9.2vw, 9rem);
+      line-height: 1.05;
+      letter-spacing: -0.045em;
       font-style: italic;
       color: var(--copper-light);
+      margin: 10px 0 18px;
+    }
+
+    .hero-afterthought {
+      display: block;
+      font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+      line-height: 1.15;
+      color: var(--warm-gray-light);
     }
 
     .hero-sub {
-      font-size: clamp(0.9rem, 1.4vw, 1.05rem);
+      font-size: clamp(0.9rem, 1.2vw, 1rem);
       font-weight: 300;
       color: var(--warm-gray-light);
       max-width: 400px;
       line-height: 1.7;
-      margin-bottom: 14px;
+      margin-bottom: 28px;
     }
 
     .hero-place {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-size: 1rem;
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
       color: var(--copper-light);
-      margin-bottom: 48px;
-      letter-spacing: 0.01em;
+      margin-bottom: 18px;
     }
 
     .hero-ctas {
@@ -1343,18 +1371,16 @@
   ============================================= -->
   <section id="hero">
     <div class="hero-left">
-      <p class="hero-tag">Builder · Founder · Storyteller</p>
+      <p class="hero-tag">When AI writes better code.</p>
       <h1 class="hero-headline">
-        The future of<br />
-        software is<br />
-        <em>engineering<br />the result.</em>
+        <span class="hero-context">The future of software development revolves around</span>
+        <em>validation.</em>
+        <span class="hero-afterthought">Not writing code.</span>
       </h1>
-      <p class="hero-sub">
-        I’ve been coding since eighth grade. Today, I’m a software engineer, exploring how we build when AI writes the code.
-      </p>
-      <p class="hero-place">From Purnea to IIT Bombay. Still asking what comes next.</p>
+      <p class="hero-sub">I’ve been coding since eighth grade. Now I’m building an IDE that gives an interface for parallely validating AI-generated code.</p>
+      <p class="hero-place">Currently building · Headwig</p>
       <div class="hero-ctas">
-        <a href="#headwig" class="btn-primary">What I’m building</a>
+        <a href="#headwig" class="btn-primary">Explore Headwig</a>
         <a href="#closing" class="btn-ghost">Get in Touch</a>
       </div>
     </div>
@@ -1385,8 +1411,8 @@
           <blockquote>“If AI is writing the code, I want to spend my time validating the results.”</blockquote>
         </figure>
         <div class="headwig-story">
-          <p>I’ve been coding since eighth grade. Agents made me faster, but I was still stuck waiting, reviewing, and starting the next task. Conversations with 30 developers reinforced that bottleneck.</p>
-          <p>I’m building Headwig, an IDE built around validation: a place to evaluate results, compare approaches, and exercise judgment while agents work in parallel.</p>
+          <p>As AI Agents entered my workflow, I realised I had to wait for every agent to finish before I could proceed to validate. And prompt next.</p>
+          <p>I’m building Headwig, an IDE built around validation: a place to evaluate results, compare approaches, and evaluate performance in isolation while agents work in parallel.</p>
         </div>
       </div>
       <figure class="headwig-art">

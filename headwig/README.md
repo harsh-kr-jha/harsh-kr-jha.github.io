@@ -1,7 +1,7 @@
 # Headwig launch page
 
 Open `/headwig/` on the portfolio site. This is a static page; no build step is required.
-The demo is a web-optimized copy of `videos/demo_headwig.mov`.
+The demo (`Headwig_Demo_New.mp4`) is optimized for the web at 1080p/30 fps, encoded with H.264 (CRF 22, slow preset), original AAC audio, and fast-start metadata for streaming.
 
 ## Connect the waitlist to Google Sheets
 

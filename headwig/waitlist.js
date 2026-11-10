@@ -38,6 +38,7 @@ form.addEventListener('submit', async (event) => {
     const result = await response.json();
     if (!result.ok || result.schema !== 2) throw new Error('Submission not confirmed with current fields');
     joined = true;
+    window.siteAnalytics?.capture('headwig_waitlist_joined');
     submit.textContent = 'You’re on the list ✓';
     status.textContent = 'Thank you for being here. I’ll email you when Headwig is ready. — Harsh';
     form.querySelectorAll('input, select, textarea').forEach((field) => { field.disabled = true; });

@@ -15,30 +15,35 @@
   <script src="waitlist.js" defer></script>
 </head>
 <body>
-  <header><a class="wordmark" href="./" aria-label="Headwig home">headwig<span>✳</span></a><a class="author" href="../">A project by Harsh Jha <span aria-hidden="true">↗</span></a></header>
+  <header><a class="wordmark" href="./" aria-label="Headwig home"><img src="owl-mark.svg" alt="" aria-hidden="true">Headwig</a><a class="author" href="../">A project by Harsh Jha <span class="author-photo" aria-hidden="true"></span></a></header>
   <main>
     <section class="intro" aria-labelledby="title">
-      <p class="eyebrow"><span></span> A introduction</p>
-      <h1 id="title">Less waiting.<br>More <em>making.</em></h1>
+      <h1 id="title"><span>Run agents in parallel.</span><span>Test changes <em>independently.</em></span></h1>
       <p class="note">I built Headwig to run AI coding agents side by side, and test each one’s changes independently. No juggling worktrees or dev servers. My original code stays untouched.</p>
-      <p class="signature">I’d love for you to try it. <span>— Harsh</span></p>
+      <p class="signature">I’d love for you to try it. <span>- Harsh</span></p>
+      <button class="primary intro-cta waitlist-trigger" type="button">Add me to the waitlist <span aria-hidden="true">↗</span></button>
     </section>
     <figure class="demo">
       <div class="video-top"><span class="dots" aria-hidden="true">● ● ●</span><span>HEADWIG / A FIRST LOOK</span><span>01</span></div>
-      <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Headwig product demonstration"><source src="Headwig_Demo_New.mp4" type="video/mp4">Your browser cannot play this video. <a href="Headwig_Demo_New.mp4">Download the Headwig demo</a>.</video>
+      <div class="video-frame">
+        <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Headwig product demonstration"><source src="Headwig_Demo_New.mp4" type="video/mp4">Your browser cannot play this video. <a href="Headwig_Demo_New.mp4">Download the Headwig demo</a>.</video>
+        <button class="demo-cta waitlist-trigger" type="button" hidden>Add me to the waitlist <span aria-hidden="true">↗</span></button>
+      </div>
       <figcaption><span>Built around validation. Made for the way you build.</span><span>Watch the demo <span aria-hidden="true">↗</span></span></figcaption>
     </figure>
-    <section class="invitation" aria-label="Join the early access waitlist"><p>A little closer to what’s next.</p><button class="primary" id="open-waitlist" type="button">Add me to the waitlist <span aria-hidden="true">↗</span></button><span class="small">Early access. A personal invite when it’s ready.</span></section>
+    <section class="invitation" aria-label="Join the early access waitlist"><button class="primary waitlist-trigger" type="button">Add me to the waitlist <span aria-hidden="true">↗</span></button><span class="small">Early access. A personal invite when it’s ready.</span></section>
   </main>
   <footer><span>Made with intent, by <a href="../">Harsh.</a></span><span>Headwig · A work in progress</span></footer>
   <dialog id="waitlist" aria-labelledby="waitlist-title">
     <button class="close" type="button" aria-label="Close waitlist">×</button>
-    <p class="eyebrow">An invitation to build</p><h2 id="waitlist-title">Come try <em>Headwig.</em></h2><p class="form-intro">A few details to help me build for your workflow.</p>
+    <h2 id="waitlist-title">Come try <em>Headwig.</em></h2>
     <form id="waitlist-form">
+      <label for="name">Your name<input id="name" name="name" type="text" autocomplete="name" placeholder="Your name" maxlength="120" required></label>
       <label for="email">Your email<input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" maxlength="254" required></label>
       <label for="stack">What stack will you use it for?<input id="stack" name="stack" placeholder="e.g. React, Python, Rust…" maxlength="300" required></label>
       <label for="os">Which OS do you use?<select id="os" name="os" required><option value="" disabled selected>Select your OS</option><option>macOS</option><option>Windows</option><option>Linux</option><option>Other</option></select></label>
       <label for="agent">Which coding agent do you use?<input id="agent" name="agent" placeholder="e.g. Claude Code, Codex, Cursor…" maxlength="300" required></label>
+      <label for="message">Message for me <span class="optional">(optional)</span><textarea id="message" name="message" placeholder="Anything you’d like me to know…" maxlength="2000" rows="3"></textarea></label>
       <div class="honey" aria-hidden="true"><label>Leave empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
       <button class="primary" id="submit-waitlist" type="submit">Put me on the waitlist <span aria-hidden="true">↗</span></button>
       <p class="privacy">I’ll only use these details for Headwig early access.</p><p id="form-status" role="status" aria-live="polite"></p>

@@ -6,21 +6,27 @@ function setup() {
   let sheet = spreadsheet.getSheetByName('Headwig waitlist');
   if (!sheet) sheet = spreadsheet.insertSheet('Headwig waitlist');
   if (sheet.getLastRow() === 0) {
-    sheet.appendRow(['Signed up at', 'Email', 'Stack', 'OS', 'Agent']);
+    sheet.appendRow(['Signed up at', 'Email', 'Stack', 'OS', 'Agent', 'Name', 'Message for me']);
     sheet.setFrozenRows(1);
+  } else {
+    // Extend the existing waitlist without moving or changing earlier entries.
+    sheet.getRange(1, 6, 1, 2).setValues([['Name', 'Message for me']]);
   }
 }
 
 function doPost(e) {
-  const reply = (ok) => ContentService.createTextOutput(JSON.stringify({ ok: ok }))
+  const reply = (ok) => ContentService.createTextOutput(JSON.stringify({ ok: ok, schema: 2 }))
     .setMimeType(ContentService.MimeType.JSON);
   const data = (e && e.parameter) || {};
+  const name = String(data.name || '').trim();
   const email = String(data.email || '').trim().toLowerCase();
   const stack = String(data.stack || '').trim();
   const os = String(data.os || '').trim();
   const agent = String(data.agent || '').trim();
+  const message = String(data.message || '').trim();
   if (data.website || email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
-      !stack || stack.length > 300 || !agent || agent.length > 300 ||
+      !name || name.length > 120 || !stack || stack.length > 300 ||
+      !agent || agent.length > 300 || message.length > 2000 ||
       ['macOS', 'Windows', 'Linux', 'Other'].indexOf(os) < 0) return reply(false);
   const lock = LockService.getScriptLock();
   try {
@@ -35,7 +41,7 @@ function doPost(e) {
     }
     // Prefix untrusted cells to prevent spreadsheet formula execution.
     const cell = (value) => /^[=+\-@\t\r\n]/.test(value) ? "'" + value : value;
-    sheet.appendRow([new Date(), cell(email), cell(stack), os, cell(agent)]);
+    sheet.appendRow([new Date(), cell(email), cell(stack), os, cell(agent), cell(name), cell(message)]);
     SpreadsheetApp.flush();
     return reply(true);
   } catch (error) {

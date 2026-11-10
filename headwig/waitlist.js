@@ -2,7 +2,14 @@ const dialog = document.querySelector('#waitlist');
 const form = document.querySelector('#waitlist-form');
 const status = document.querySelector('#form-status');
 const submit = document.querySelector('#submit-waitlist');
-document.querySelector('#open-waitlist').addEventListener('click', () => dialog.showModal());
+const video = document.querySelector('.demo video');
+const videoCta = document.querySelector('.demo-cta');
+const syncVideoCta = () => { videoCta.hidden = video.paused || video.ended; };
+['play', 'pause', 'ended'].forEach((eventName) => video.addEventListener(eventName, syncVideoCta));
+syncVideoCta();
+document.querySelectorAll('.waitlist-trigger').forEach((button) => {
+  button.addEventListener('click', () => dialog.showModal());
+});
 document.querySelector('.close').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', (event) => {
   const bounds = dialog.getBoundingClientRect();
@@ -29,11 +36,11 @@ form.addEventListener('submit', async (event) => {
     });
     if (!response.ok) throw new Error('Request failed');
     const result = await response.json();
-    if (!result.ok) throw new Error('Submission not saved');
+    if (!result.ok || result.schema !== 2) throw new Error('Submission not confirmed with current fields');
     joined = true;
     submit.textContent = 'You’re on the list ✓';
     status.textContent = 'Thank you for being here. I’ll email you when Headwig is ready. — Harsh';
-    form.querySelectorAll('input, select').forEach((field) => { field.disabled = true; });
+    form.querySelectorAll('input, select, textarea').forEach((field) => { field.disabled = true; });
   } catch {
     status.textContent = 'I couldn’t confirm your signup. Please try again. Your details are still here.';
     submit.disabled = false;

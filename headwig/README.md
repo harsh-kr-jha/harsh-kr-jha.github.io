@@ -24,3 +24,9 @@ After changing the script, use **Deploy → Manage deployments → Edit → New 
 In the Google Sheet, choose **Extensions → Apps Script** and replace the script with the latest `integrations/Code.gs`. Run **setup** once: it adds Name and Message columns to the existing tab without changing earlier entries. Then choose **Deploy → Manage deployments → Edit → New version → Deploy**. The existing `/exec` URL stays the same. Do this before publishing the updated form; the previously deployed script does not store the new fields.
 
 Google reference: https://developers.google.com/apps-script/guides/web
+
+## Download and setup guide
+
+The download buttons in `index.html` link to the `Release` release in `harsh-kr-jha/getHeadwig`. Discord links use `https://discord.com/invite/SrrYT4Rkg`; joining is optional.
+
+The app requires macOS 15 or later and is currently unsigned. First-open instructions link to Apple’s guidance. The Wisdom guide uses optimized JPEG copies in `images/`; original screenshots remain in `../assets/setup_wisdom/`.

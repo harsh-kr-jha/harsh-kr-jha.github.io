@@ -26,9 +26,9 @@
   let ready = false;
   const queued = [];
   window.siteAnalytics = {
-    capture(event, properties = {}) {
-      if (ready) window.posthog.capture(event, properties);
-      else queued.push([event, properties]);
+    capture(event, properties = {}, options) {
+      if (ready) window.posthog.capture(event, properties, options);
+      else queued.push([event, properties, options]);
     }
   };
 
@@ -44,13 +44,23 @@
     person_profiles: 'never',
     loaded() {
       ready = true;
-      queued.splice(0).forEach(([event, properties]) => window.posthog.capture(event, properties));
+      queued.splice(0).forEach(([event, properties, options]) => window.posthog.capture(event, properties, options));
     }
   });
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href="headwig/"]').forEach((link) => {
       link.addEventListener('click', () => window.siteAnalytics.capture('headwig_link_clicked'));
+    });
+    document.querySelectorAll('[data-analytics-event]').forEach((link) => {
+      link.addEventListener('click', () => {
+        const { analyticsEvent, placement, screenshot, guide } = link.dataset;
+        const properties = { placement };
+        if (screenshot) properties.screenshot = screenshot;
+        if (guide) properties.guide = guide;
+        // Flush outbound clicks promptly without delaying navigation.
+        window.siteAnalytics.capture(analyticsEvent, properties, { send_instantly: true });
+      });
     });
     const video = document.querySelector('.demo video');
     if (video) {
